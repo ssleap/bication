@@ -10,17 +10,18 @@
  - 데이터 분석적 접근을 하여 이러한 피해를 사전에 방지하려고 한다. 
  ### 2) 활용데이터
  - 공공데이터포털 
-  - 의약품 낱알식별정보(DB) 서비스
-  - 의약품 처방정보 (https://goo.gl/58jovq)
+   - 의약품 낱알식별정보(DB) 서비스 (https://goo.gl/ZD4jR3)
+   - 의약품 처방정보 (https://goo.gl/58jovq)
  - 식품의약품안전처
-  - 의약품 부작용 정보 (https://goo.gl/xkz3zo)
+   - 의약품 부작용 정보 (https://goo.gl/xkz3zo)
  - 통계청
-  - 의약품 소비량 (https://goo.gl/CMuKX8)
-  - 의약품 판매액 (https://goo.gl/yHPVnJ)
-  
+   - 의약품 소비량 (https://goo.gl/CMuKX8)
+   - 의약품 판매액 (https://goo.gl/yHPVnJ)
+ - 국가지표체계
+   - 의료기관 방문 횟수 (https://goo.gl/LqHdLq) 
   
  ### 3) 데이터 처리 방안, 분석 기법 
  
  ## 3. 기대 효과 
- 
+ - 부적절한 의약품 오남용 사고를 예방한다. 
  
