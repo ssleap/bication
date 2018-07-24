@@ -7,13 +7,14 @@
 ### Abstract)  
 사용자들의 식단과 복약일지를 입력받아 공공데이터와 연결, 하루 권장 섭취량과 의약품 상성 정보를 계산하여 목적에 맞는 올바른 식단과 건강식품을 추천해 준다. 
 (또한 식단대로 실천이 되었는지도 입력을 받는다면 성공률이 높은 식단을 추천해줄 수 있지 않을까? - 머신러닝 부분 )
-
+![index](https://github.com/ssleap/Nutritionist/image/index.jpg)
 ### Input Data)
 개인식단) 식단 List 
 ex) [{'1식' : ['과일','샐러드','고구마',',견과류'], '2식':['닭가슴살 샐러드']}]
 복약일지) 복약품 List (건강기능식품 포함함)
 ex) [{'1':['홍삼정','타이레놀'],'2':['부루펜','']}]
-
+![spoonisys](https://github.com/ssleap/Nutritionist/image/spoonisys.jpg)
+consulting
 ### Processing data)
 1.{[식단] -<Mapping>-[식품 영양성분]} +
 {[복약일지]-<Mapping>-[건강기능식품정보, DUR 품목정보, DUR성분정보]}  
@@ -34,7 +35,7 @@ ex) [{'1':['홍삼정','타이레놀'],'2':['부루펜','']}]
 3. 일일, 주간, 월간 종합 보고서 
 - 영양성분별 총량, 일일 권장량 기준 초과 미달성분 표시
 - 초과성분별 기피 식단, 미달성분별 추천식단 표시 
-
+![consulting](https://github.com/ssleap/Nutritionist/image/consulting.jpg)
 ## 3. 활용 데이터 
 ### 1. 식품의약품안전처 식품 관련 정보
 https://www.data.go.kr/dataset/15020625/openapi.do
