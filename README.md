@@ -13,7 +13,7 @@
 ex) [{'1식' : ['과일','샐러드','고구마',',견과류'], '2식':['닭가슴살 샐러드']}]
 복약일지) 복약품 List (건강기능식품 포함함)
 ex) [{'1':['홍삼정','타이레놀'],'2':['부루펜','']}]
-![spoonisys](https://github.com/ssleap/Nutritionist/image/spoonisys.jpg)
+![spoonisys](/image/spoonisys.jpg)
 consulting
 ### Processing data)
 1.{[식단] -<Mapping>-[식품 영양성분]} +
