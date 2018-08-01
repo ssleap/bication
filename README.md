@@ -81,3 +81,15 @@ DB 서버(공공데이터 서버에 전달할 query 정보를 가진 메타데�
 - 이 점은 따릉이로 접근하기 좋은 거리(대중교통 접근이 어렵거나, 걷기엔 멀지만 지하철을 타기엔 가까운 한 두 정거장 거리 등)를 타게팅 함으로써 해결...?
 - 대여소 주변 추천이므로 자전거를 세우는 문제도 해소
 ```
+
+## 참고자료
+- 데이터
+ * https://data.seoul.go.kr/ # 서울시열린데이터광장
+ * https://www.bikeseoul.com:447/app/location/moveRealtimeStatus.do # 대여소 거치율 조회
+ * https://www.data.go.kr/dataset/3045310/fileData.do # 서울특별시 자전거 정보
+ * https://datalab.naver.com/opendata.naver?dbType=1&q=%EC%9E%90%EC%A0%84%EA%B1%B0&page=2 # 네이버랩스 자전거 데이터 조회 결과
+
+- 뉴스기사
+ * http://www.yonhapnews.co.kr/bulletin/2017/07/20/0200000000AKR20170720154900797.HTML # 따릉이 이용 관련 인포그래픽 기사
+ * https://www.si.re.kr/node/42577 # 자전거 관광도시 서울을 위한 정책방향, 2011년
+ * https://news.joins.com/article/22842846 # 자전거 수송분담률 관련 기사
