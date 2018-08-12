@@ -9,22 +9,22 @@
         <div class="header-search vis-header-search">
             <!-- Keyword Input -->
             <div class="header-search-input-item">
-                <input type="text" placeholder="Keywords" value=""/>
+                <input type="text" placeholder="검색..." value=""/>
             </div>
 
             <!-- Categorie Select -->
             <div class="header-search-select-item">
                 <select data-placeholder="All Categories" class="chosen-select" >
-                    <option>All Categories</option>
-                    <option>Shops</option>
-                    <option>Hotels</option>
-                    <option>Restaurants</option>
-                    <option>Fitness</option>
+                    <option>모든 카테고리</option>
+                    <option>음식</option>
+                    <option>문화</option>
+                    <option>놀이</option>
+                    <option>산책</option>
                     <option>Events</option>
                 </select>
             </div>
             <!-- When browser widht is long, Search Button -->
-            <button class="header-search-button" onclick="window.location.href='listing'">Search1</button>
+            <button class="header-search-button" onclick="window.location.href='listing'">Search</button>
         </div>
         <!-- When browser widht is short, Search Button -->
         <div class="show-search-button"><i class="fa fa-search"></i> <span>Search2</span></div>
@@ -37,14 +37,14 @@
                 Hello , Alisa
             </div>
             <ul>
-                <li><a href="{{ url_for('dashboard')}}"> My Dash board</a></li>
-                <li><a href="{{ url_for('myprofile')}}"> Edit profile</a></li>
+                <li><a href="{{ url_for('dashboard')}}"> My Page</a></li>
+                <li><a href="{{ url_for('myprofile')}}"> 프로필 수정</a></li>
                 <li><a href="{{ url_for('logout')}}">Log Out</a></li>
             </ul>
         </div>
         {% else  -%}
         <!-- Sign-In button -->
-        <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In </div>
+        <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Log in </div>
         {% endif -%}
         <!--&lt;!&ndash; nav-button-wrap&ndash;&gt;-->
         <!--<div class="nav-button-wrap color-bg">-->

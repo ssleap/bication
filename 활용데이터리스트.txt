@@ -1,8 +1,0 @@
-https://ndb.nal.usda.gov/ndb/nutrients/index - USDA Nutrient Search
-https://data.europa.eu/euodp/data/dataset/food-composition-database - Food composition database for nutrient intake (EU Open Data Portal)
-레시피 재료 정보(농림 축산 식품 공공데이터)
-http://data.mafra.go.kr/opendata/data/indexOpenDataDetail.do?data_id=20150827000000000465&filter_ty=O&getBack=G&sort_id=&s_data_nm=&instt_id=&cl_code=&shareYn=
-의약품 안전 사용 서비스(DUR)
-식품영양성분 DB(식품안전나라)
-http://www.foodsafetykorea.go.kr/portal/healthyfoodlife/foodnutrient/simpleSearch.do?menu_grp=MENU_NEW03&menu_no=2805
-음식 영양분 데이터베이스

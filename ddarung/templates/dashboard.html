@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% block html_attribs %}
@@ -34,8 +33,8 @@
                     <!-- profile-edit-wrap -->
                     <div class="profile-edit-wrap">
                         <div class="profile-edit-page-header">
-                            <h2>Admin Panel</h2>
-                            <div class="breadcrumbs"><a href="#">Home</a><span>Dasboard</span></div>
+                            <h2>My Page</h2>
+                            <div class="breadcrumbs"><a href="#">Home</a><span>My Page</span></div>
                         </div>
                         <div class="row">
                             <!-- main board -->
@@ -44,8 +43,37 @@
                                 <!-- profile-edit-container-->
                                 <div class="profile-edit-container">
                                     <div class="profile-edit-header fl-wrap" style="margin-top:30px">
-                                        <h4>Helo , <span>Alisa</span></h4>
+                                        <h4>Hello , <span>Alisa</span></h4>
                                     </div>
+
+                                    <div class="profile-edit-header fl-wrap" style="margin-top:30px">
+                                        <h4>자주가는  <span>장소 추가</span></h4>
+                                    </div>
+
+                                    <div class="custom-form">
+                                                <label>퇴근 장소<i class="fa fa-map-marker"></i></label>
+												<select data-placeholder="Location" class="chosen-select" >
+                                                    <option>추가...</option>
+                                                    <option>회사</option>
+                                                    <option>별장</option>
+                                                    <option>회사</option>
+                                                    <option>우리학교</option>
+                                                    <option>느그학교</option>
+                                                    <option>백악관</option>
+                                                </select>
+                                                <label>자주가는 목적지</label>
+                                                <select data-placeholder="Location" class="chosen-select" >
+                                                    <option>추가...</option>
+                                                    <option>집</option>
+                                                    <option>별장</option>
+                                                    <option>회사</option>
+                                                    <option>우리학교</option>
+                                                    <option>느그학교</option>
+                                                    <option>백악관</option>
+                                                </select>
+
+                                    </div>
+
                                     <div class="notification success fl-wrap">
                                         <p>Your listing <a href="#">Fitness Center Brooklyn</a> has been approved!</p>
                                         <a class="notification-close" href="#"><i class="fa fa-times"></i></a>
@@ -210,5 +238,3 @@
 {%- endblock scripts %}
 
 <!--=============== <body>  ===============-->
-
-

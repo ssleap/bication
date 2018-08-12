@@ -204,5 +204,10 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
+@app.route('/tList')
+def textList():
+    return render_template('textlist.html')
+
+
 if __name__ == '__main__':
     app.run()
