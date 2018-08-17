@@ -1,0 +1,20 @@
+seoul	서울시 한강공원 물마시는 곳 위치정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-2407&srvType=S&serviceKind=1&currentPageNo=1	http://openapi.seoul.go.kr:8088	GeoInfoDrinkWater	424367587667686b38305544767173			
+seoul	서울 두드림길 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-2501&srvType=S&serviceKind=1&currentPageNo=1	http://openapi.seoul.go.kr:8088	SeoulGilWalkCourse	424367587667686b38305544767173			
+seoul	서울시 산책로 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-310&srvType=S&serviceKind=1&currentPageNo=1	http://openapi.seoul.go.kr:8088	GeoInfoWalkway	424367587667686b38305544767173			
+seoul	서울시 공원 진행중인 문화행사 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-1259&srvType=S&serviceKind=1&currentPageNo=1	http://openapi.seoul.go.kr:8088	SearchCulturalActivityService	424367587667686b38305544767173			
+seoul	서울시 공공자전거 대여소 정보	http://data.seoul.go.kr/dataList/catalogView.do?infId=OA-13252&srvType=S&currentPageNo=2&searchValue=&searchKey=null	파일형태	_File	424367587667686b38305544767173			
+seoul	서울특별시 골프연습장 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-15057&srvType=S&ServiceKind=1	http://openapi.seoul.go.kr:8088	GolfFrpInfo	424367587667686b38305544767173			
+seoul	서울도서관 이용시간 및 휴관일 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-2238&srvType=S&ServiceKind=1	http://openapi.seoul.go.kr:8088	SeoulLibraryTime	424367587667686b38305544767173			
+seoul	서울관광거리정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-12929&srvType=S&ServiceKind=1	http://openapi.seoul.go.kr:8088	SebcTourStreetKor	424367587667686b38305544767173			
+seoul	서울특별시 영화관 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-15156&srvType=S&ServiceKind=1	http://openapi.seoul.go.kr:8088	movieTheatersBizInfo	424367587667686b38305544767173			
+seoul	서울형 지도태깅 전통시장 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-13586&srvType=S&serviceKind=1	http://openapi.seoul.go.kr:8088	MgisTraShop	424367587667686b38305544767173			
+seoul	서울형 지도태깅 서울봄꽃길 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-13583&srvType=S&ServiceKind=1	http://openapi.seoul.go.kr:8088	MgisSpringStreet	424367587667686b38305544767173			
+seoul	서울형 지도태깅 사색의 공간 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-13608&srvType=S&ServiceKind=1	http://openapi.seoul.go.kr:8088	MgisHealingPlace	424367587667686b38305544767173			
+seoul	서울형 지도태깅 여름녹음길 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-13589&srvType=S&ServiceKind=1	http://openapi.seoul.go.kr:8088	MgisSummerStreet	424367587667686b38305544767173			
+seoul	서울형 지도태깅 서울 골목길 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-13615&srvType=S&ServiceKind=1	http://openapi.seoul.go.kr:8088	MgisAllyWay	424367587667686b38305544767173			
+seoul	서울형 지도태깅 서울단풍길 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-13585&srvType=S&ServiceKind=1	http://openapi.seoul.go.kr:8088	MgisFall	424367587667686b38305544767173			
+seoul	서울형 지도태깅 서울둘레길 정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-13579&srvType=S&ServiceKind=1	http://openapi.seoul.go.kr:8088	mgisdulegil	424367587667686b38305544767173			
+data_go	구로구 문화행사	https://www.data.go.kr/dataset/15008358/fileData.do	파일형태	_None				
+data_go	강동구 문화행사	https://www.data.go.kr/dataset/15019521/fileData.do	파일형태	_File				
+data_go	상권정보 공공데이터	https://www.data.go.kr/dataset/15012005/fileData.do	파일형태	_File				
+data_go	소상공인 상가업소 정보(반경 내 상권)	https://www.data.go.kr/dataset/15012005/openapi.do?mypageFlag=Y	http://apis.data.go.kr/B553077/api/open/sdsc	storeZoneInRadius	9yufdGwfG5nTrm48106s%2B%2FQK%2Bz6byu8kQyqGYX7ywOTcSZz5hKnJG6OSAFPymm3Ei6TrKcsL3Osas1zm4v6HmA%3D%3D	radius	cx	cv

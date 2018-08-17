@@ -1,0 +1,8 @@
+seoul	서울시 주소별 공원정보 조회	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-210&srvType=A&serviceKind=1&currentPageNo=1	http://openapi.seoul.go.kr:8088		424367587667686b38305544767173
+seoul	서울시 자전거 편의시설정보	http://data.seoul.go.kr/dataList/catalogView.do?infId=OA-13253&srvType=S&currentPageNo=2&searchValue=&searchKey=null	http://openapi.seoul.go.kr:8088		424367587667686b38305544767173
+seoul	서울시 공공체육시설별 운영프로그램정보	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-1221&srvType=S	http://openapi.seoul.go.kr:8088		424367587667686b38305544767173
+seoul	서울시립미술관 전시현황	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-1205&srvType=S	http://openapi.seoul.go.kr:8088		424367587667686b38305544767173
+seoul	서울시 박물관 현황	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-13002&srvType=S	http://openapi.seoul.go.kr:8088		424367587667686b38305544767173
+data_go	서초구 문화행사	https://www.data.go.kr/dataset/15012093/fileData.do	파일형태	_File	
+data_go	종로구 문화행사	https://www.data.go.kr/dataset/3054128/fileData.do	파일형태	_File	
+seoul	서울시 문화행사정보 장소명	http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-133&srvType=A&serviceKind=1&currentPageNo=1	http://openapi.seoul.go.kr:8088	SearchConcertPlaceService	424367587667686b38305544767173
