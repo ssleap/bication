@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block html_attribs %}
+{% endblock html_attribs %}
+
+<!--=============== <head>  ===============-->
+{%- block styles %}
+{%- endblock styles %}
+<!--=============== </head>  ===============-->
+
+
+<!--=============== <body>  ===============-->
+{% block body_attribs %}
+
+{% endblock body_attribs %}
+
+ <!--error message-->
+{% block error_alerts -%}
+
+{%- endblock error_alerts %}
+
+{% block content -%}
+    <!--content container-->
+    <!-- Content-->
+<div class="content full-height fs-slider-wrap">
+    <!--section -->
+    <section class="hero-section full-height" data-scrollax-parent="true" id="sec1">
+        <div class="media-container video-parallax" data-scrollax="properties: { translateY: '200px' }">
+            <div class="bg mob-bg" style="background-image: url(/static/images/bg/1.jpg)"></div>
+            <div class="video-container full-height">
+                <video autoplay  loop muted  class="bgvid">
+                    <source src="/static/video/2.mp4" type="video/mp4">
+                </video>
+            </div>
+                    <!--
+                        Vimeo code
+
+                         <div  class="background-vimeo" data-vim="97871257"> </div> -->
+                    <!--
+                        Youtube code
+
+                         <div  class="background-youtube-wrapper" data-vid="Hg5iNVSp2z8" data-mv="1"> </div> -->
+
+        </div>
+        <div class="hero-section-wrap fl-wrap full-height">
+            <div class="container">
+                <div class="intro-item fl-wrap">
+                    <h2>목적지를 향한 여가 생활을 찾아보세요</h2>
+                    <h3>#테이크아웃 맛집 #이쁜 공원 #시선을 사로잡는 야경</h3>
+                </div>
+                <div class="main-search-input-wrap">
+                    <div class="main-search-input fl-wrap">
+{#                        <div class="main-search-input-item">#}
+{#                            <input type="text" placeholder="What are you looking for?" value=""/>#}
+{#                        </div>#}
+                        <div class="main-search-input-item location" id="autocomplete-container">
+                            <input type="text" placeholder="Source" id="autocomplete-input" value=""/>
+                            <a href="#"><i class="fa fa-dot-circle-o"></i></a>
+                        </div>
+                        <div class="main-search-input-item location" id="autocomplete-container">
+                            <input type="text" placeholder="Destination" id="autocomplete-input" value=""/>
+                            <a href="#"><i class="fa fa-dot-circle-o"></i></a>
+                        </div>
+                        <div class="main-search-input-item">
+                            <select data-placeholder="All Categories" class="chosen-select" >
+                                {% for category in categories %}
+                                    <option> {{ category }}</option>
+                                {% endfor %}
+
+                            </select>
+                        </div>
+                        <button class="main-search-button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
+                    </div>
+                </div>
+                <div class="distance-input fl-wrap">
+                    <div class="distance-title" style="color:white"> 여유 시간 <span></span> min</div>
+                    <div class="distance-radius-wrap fl-wrap">
+                        <input class="distance-radius rangeslider--horizontal" type="range" min="10" max="200" step="10" value="1" data-title="Radius around selected destination">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section end -->
+
+</div>
+
+
+{%- endblock content %}
+
+<!--========== additonal scripts  ==========-->
+{% block scripts %}
+
+{%- endblock scripts %}
+
+<!--=============== <body>  ===============-->

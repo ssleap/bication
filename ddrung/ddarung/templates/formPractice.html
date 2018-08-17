@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!--form action Logic을 알려주는 주소값-->
+<div class="content full-height fs-slider-wrap">
+                <form method="POST" action="/form">
+                    {{ form2.csrf_token }}
+                        <h1>{{message}}</h1>
+                    {{ form2.user_id.label }} {{ form2.user_id(size=20) }}
+                    {{ form2.user_pw.label }} {{ form2.user_pw(size=20) }}
+                    <input type="submit" value="Go">
+                </form>
+</div>
+
+    <!--form method get방식 or post방식-->
+<!--{#    <form action="/form" method ="get" name="paul">#}-->
+<!--{#        <h1>{{name}} 님 반가워요</h1>#}-->
+<!--{#        &lt;!&ndash;form 에는 입력받는 곳이 있어야 한다.  있어야 한다&ndash;&gt;#}-->
+<!--{#        <input type="text" name="id">#}-->
+<!--{#        <input type="password" name="pw">#}-->
+<!--{#        &lt;!&ndash;form 에는 submit 의 버튼이 있어야 한다&ndash;&gt;#}-->
+<!--{#        <input type="submit" value="시작">#}-->
+<!--{#    </form>#}-->
+{% endblock content %}
+
+
+{% block scripts %}
+{%- endblock scripts %}
