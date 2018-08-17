@@ -203,6 +203,11 @@ blockquote p {
 .content.fs-slider-wrap {
 	padding-top:80px;
 }
+.intro-item.fl-wrap{
+	float:left;
+	width:100%;
+	position:relative;
+}
 .fl-wrap {
 	float:left;
 	width:100%;
@@ -765,6 +770,13 @@ section.color-bg .header-sec-link a:hover {
 }
 section.hero-section {
 	padding:30% 0 ;
+}
+section.hero-section.index {
+	padding:15% 0 ;
+	position: absolute;
+}
+section.hero-section.home{
+	padding:10% 0 ;
 }
 section.hero-section.no-dadding {
 	padding:0;
@@ -1476,7 +1488,7 @@ section.gray-section .section-separator {
 .card-listing  .geodir-category-img img {
 	float:left;
 	width:100%;
-	height:auto;
+	height:240px;
 	z-index:1;
 }
 .card-listing  .geodir-category-img .overlay {
@@ -1849,7 +1861,7 @@ section.gray-section .section-separator {
 }
 .listsearch-input-text a.loc-act{
 	position:absolute;
-	top:54px;
+	top:15px;
 	right:20px;
 	z-index:5;
 	cursor:pointer;
@@ -1975,6 +1987,10 @@ section.gray-section .section-separator {
 	display:block;
 }
 .distance-input {
+	margin-top:10px;
+	margin-bottom: 30px;
+}
+.distance-input.listing {
 	margin-top:30px;
 }
 .hidden-listing-filter {
@@ -1985,6 +2001,14 @@ section.gray-section .section-separator {
 	border:none;
 	float:left;
 	padding:15px 45px;
+	border-radius:4px;
+	color:#fff;
+	cursor:pointer;
+}
+.fs-map-btn.listing {
+	border:none;
+	float:left;
+	padding:16px 45px;
 	border-radius:4px;
 	color:#fff;
 	cursor:pointer;

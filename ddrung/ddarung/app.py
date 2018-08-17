@@ -151,10 +151,90 @@ def login(rule):
 def update_userdata():
     pass
 
+def get_category(name="Takeout"):
+
+    if name == "Takeout":
+        categories = { "cat_name": "테이크아웃",
+                   "pop_tags": "#다이어트포기 #칼로리보충 #2+1할인",
+                   "items" : [{ "img" : "/static/listimg/takeout/1.jpg",
+                              "mark_cnt" : 45,
+                              "title" : "디어브레드",
+                              "text" : "빵집,치아바타,치즈,냉장고를부탁해,이원일셰프,착한가격,건강빵,테이크아웃,간단한요기,런치",
+                              "star_cnt": 2,
+                              "rev_cnt": 7,
+                              "addr": "서울특별시 성북구 안암동5가 101-66",
+                              "call": "070-7661-4129",
+                              "lon": 37.587691,
+                              "lat": 127.029014
+                             },
+                            {"img": "/static/listimg/takeout/2.jpg",
+                             "mark_cnt": 16,
+                             "title": "영철버거",
+                             "text": "버거,치즈,모던한분위기,오래된밥집,아늑한카페,혼자맛집,간식,힐링푸드,런치",
+                             "star_cnt": 2,
+                             "rev_cnt": 15,
+                             "addr": "서울특별시 성북구 안암동5가 86-132",
+                             "call": "02-922-1668",
+                             "lon": 37.585717,
+                             "lat": 127.030605
+                             },
+                            {"img": "/static/listimg/takeout/3.jpg",
+                             "mark_cnt": 12,
+                             "title": "프로마치",
+                             "text": "샌드위치,샐러드,브런치,평화로운,가성비좋은,여유로운,홈메이드,다이어트맛집,테이크아웃,아침메뉴",
+                             "star_cnt": 2,
+                             "rev_cnt": 82,
+                             "addr": "서울특별시 성북구 안암동5가 103-149",
+                             "call": "050-4110-1371",
+                             "lon": 37.585589,
+                             "lat": 127.030184
+                             },
+                            {"img": "/static/listimg/takeout/4.jpg",
+                             "mark_cnt": 5,
+                             "title": "호만두",
+                             "text": "졸업식,고급스럽고 격식있는,조용히 이야기하는,가족외식,기념일,저녁식사,점심식사",
+                             "star_cnt": 1,
+                             "rev_cnt": 16,
+                             "addr": "서울특별시 성북구 안암동5가 104-34",
+                             "call": "02-923-1555",
+                             "lon": 37.583911,
+                             "lat": 127.029734
+                             },
+                            {"img": "/static/listimg/takeout/5.jpg",
+                             "mark_cnt": 4,
+                             "title": "핸썸베이글",
+                             "text": "베이글,연어베이글,크림치즈베이글,줄서서먹는,넓은공간,테이크아웃",
+                             "star_cnt": 3,
+                             "rev_cnt": 48,
+                             "addr": "서울특별시 성북구 안암동5가 101-81",
+                             "call": "02-6449-1505",
+                             "lon": 37.587420,
+                             "lat":127.028751
+                             },
+                            {"img": "/static/listimg/takeout/6.jpg",
+                             "mark_cnt": 2,
+                             "title": "본도시락",
+                             "text": "불고기,도시락전문,도시락,고급스러운,여자들끼리,다양한메뉴",
+                             "star_cnt": 2,
+                             "rev_cnt": 23,
+                             "addr": "서울특별시 성북구 안암동5가 134-70",
+                             "call": "02-960-0209",
+                             "lon": 37.582437,
+                             "lat": 127.028591
+                             }
+                            ]
+                 }
+
+    else:
+        categories = None
+    return categories
+
+def get_category_list():
+    pass
 
 
 def render_with_opt(html,rule, **option):
-    categories = ["All", "음식", "문화", "놀이", "산책"]
+    categories = ["All", "테이크아웃", "문화", "놀이", "산책"]
     user_destinations = ["서울 은평구", "서울 동작구"]
     user_favorates = ["인천 서구", "서울 강남구"]
     if current_user.is_authenticated:
@@ -184,11 +264,15 @@ def index():
 
 @app.route('/home/', methods=['GET','POST'])
 def home():
-    return render_with_opt("home.html",'/home/')
+    category_list = [get_category("Takeout")]
+    return render_with_opt("home.html",'/home/',category_list=category_list)
 
 @app.route('/listing/', methods=['GET','POST'])
 def listing():
-    return render_with_opt('listing.html', '/listing/')
+    result_cat = "테이크아웃"
+    category = get_category("Takeout")
+    lists = category["items"]
+    return render_with_opt('listing.html', '/listing/',result_cat=result_cat,lists=lists)
 
 
 @app.route('/dashboard/', methods=['GET','POST'])
