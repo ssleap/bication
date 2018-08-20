@@ -50,11 +50,11 @@
                     <div class="listsearch-input-wrap fl-wrap">
 
                         <div class="listsearch-input-text" id="autocomplete-container">
-                            <input type="text" placeholder="출발지" id="autocomplete-input" class="qodef-archive-places-search" value=""/>
+                            <input type="text" placeholder="출발지" id="autocomplete-input1" class="qodef-archive-places-search" value=""/>
                             <a  href="#"  class="loc-act qodef-archive-current-location"><i class="fa fa-dot-circle-o"></i></a>
                         </div>
                         <div class="listsearch-input-text" id="autocomplete-container">
-                            <input type="text" placeholder="목적지" id="autocomplete-input" class="qodef-archive-places-search" value=""/>
+                            <input type="text" placeholder="목적지" id="autocomplete-input2" class="qodef-archive-places-search" value=""/>
                             <a  href="#"  class="loc-act qodef-archive-current-location"><i class="fa fa-dot-circle-o"></i></a>
                         </div>
                         <div class="distance-input listing fl-wrap">
@@ -122,10 +122,12 @@
 
 <!--========== additonal scripts  ==========-->
 {% block scripts %}
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVT_EAOogMhCvMOofSMXGztYcOQtViopU" type="text/javascript"></script>
 <script>
     var markerIcon = {
         anchor: new google.maps.Point(22, 16),
-        url: 'images/marker.png',
+        url: '/static/images/marker.png',
     }
     function locationData(locationURL, locationCategory, locationImg, locationTitle, locationAddress, locationPhone, locationStarRating, locationRevievsCounter) {
             return ('<div class="map-popup-wrap"><div class="map-popup"><div class="infoBox-close"><i class="fa fa-times"></i></div><div class="map-popup-category">' + locationCategory + '</div><a href="' + locationURL + '" class="listing-img-content fl-wrap"><img src="' + locationImg + '" alt=""></a> <div class="listing-content fl-wrap"><div class="card-popup-raining map-card-rainting" data-staRrating="' + locationStarRating + '"><span class="map-popup-reviews-count">( ' + locationRevievsCounter + ' reviews )</span></div><div class="listing-title fl-wrap"><h4><a href=' + locationURL + '>' + locationTitle + '</a></h4><span class="map-popup-location-info"><i class="fa fa-map-marker"></i>' + locationAddress + '</span><span class="map-popup-location-phone"><i class="fa fa-phone"></i>' + locationPhone + '</span></div></div></div></div>')
@@ -135,15 +137,17 @@
     var locations = [];
     var lists = {{ lists|tojson }};
     for (var i = 0; i < lists.length; i++) {
-        locations.push([locationData('listing-single.html', "{{ result_cat }}", lists[i].img, lists[i].title, lists[i].addr, lists[i].call , lists[i].star_cnt, lists[i].rev_cnt ), lists[i].lon, lists[i].lat,i, markerIcon]);
+        locations.push([locationData('listing-single.html', "{{ result_cat }}", lists[i].img, lists[i].title, lists[i].addr, lists[i].call , lists[i].star_cnt, lists[i].rev_cnt ), lists[i].lon, lists[i].lat,i , markerIcon]);
         lat_center = lat_center + lists[i].lat;
         lon_center = lon_center + lists[i].lon;
+        console.log(lists[i].img, lists[i].title, lists[i].addr, lists[i].call , lists[i].star_cnt, lists[i].rev_cnt, lists[i].lon, lists[i].lat,i );
     }
     lat_center = lat_center/parseFloat(lists.length);
     lon_center = lon_center/parseFloat(lists.length);
 
     
 </script>
+
 <script type="text/javascript" src="/static/js/map_infobox.js"></script>
 <script type="text/javascript" src="/static/js/markerclusterer.js"></script>
 <script type="text/javascript" src="/static/js/maps.js"></script>

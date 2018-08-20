@@ -6,11 +6,9 @@
     // }
 
     function mainMap() {
-        /*function locationData(locationURL, locationCategory, locationImg, locationTitle, locationAddress, locationPhone, locationStarRating, locationRevievsCounter) {
-            return ('<div class="map-popup-wrap"><div class="map-popup"><div class="infoBox-close"><i class="fa fa-times"></i></div><div class="map-popup-category">' + locationCategory + '</div><a href="' + locationURL + '" class="listing-img-content fl-wrap"><img src="' + locationImg + '" alt=""></a> <div class="listing-content fl-wrap"><div class="card-popup-raining map-card-rainting" data-staRrating="' + locationStarRating + '"><span class="map-popup-reviews-count">( ' + locationRevievsCounter + ' reviews )</span></div><div class="listing-title fl-wrap"><h4><a href=' + locationURL + '>' + locationTitle + '</a></h4><span class="map-popup-location-info"><i class="fa fa-map-marker"></i>' + locationAddress + '</span><span class="map-popup-location-phone"><i class="fa fa-phone"></i>' + locationPhone + '</span></div></div></div></div>')
-        }*/
-
-
+        // function locationData(locationURL, locationCategory, locationImg, locationTitle, locationAddress, locationPhone, locationStarRating, locationRevievsCounter) {
+        //     return ('<div class="map-popup-wrap"><div class="map-popup"><div class="infoBox-close"><i class="fa fa-times"></i></div><div class="map-popup-category">' + locationCategory + '</div><a href="' + locationURL + '" class="listing-img-content fl-wrap"><img src="' + locationImg + '" alt=""></a> <div class="listing-content fl-wrap"><div class="card-popup-raining map-card-rainting" data-staRrating="' + locationStarRating + '"><span class="map-popup-reviews-count">( ' + locationRevievsCounter + ' reviews )</span></div><div class="listing-title fl-wrap"><h4><a href=' + locationURL + '>' + locationTitle + '</a></h4><span class="map-popup-location-info"><i class="fa fa-map-marker"></i>' + locationAddress + '</span><span class="map-popup-location-phone"><i class="fa fa-phone"></i>' + locationPhone + '</span></div></div></div></div>')
+        // }
         // var locations = [
         //     [locationData('listing-single2.html', 'Food and Drink', 'images/all/8.jpg', 'Luxury Restourant', "1327 Intervale Ave, Bronx, NY ", "+38099231212", "5", "27"), 40.72956781, -73.99726866, 0, markerIcon],
         //     [locationData('listing-single.html', 'Conference and Events', 'images/all/1.jpg', 'Event In City Mol', "W 85th St, New York, NY ", "+38099231212", "4", "5"), 40.76221766, -73.96511769, 1, markerIcon],
@@ -25,12 +23,14 @@
         //     [locationData('listing-single3.html', 'Gym - Fitness', 'images/all/3.jpg', 'Gym in the Center', "9443 Fairview Ave, North Bergen, NJ", "+38099231212", "4", "11"), 40.67386831, -74.10438536, 10, markerIcon],
         // ];
 
+        var testlat = 40.7
+        var testlon = -73.87
         var map = new google.maps.Map(document.getElementById('map-main'), {
             zoom: 9,
             scrollwheel: false,
-            center: new google.maps.LatLng(lat_center, lon_center),
+            center: new google.maps.LatLng(lon_center, lat_center),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            zoomControl: false,
+            zoomControl: true,
             mapTypeControl: false,
             scaleControl: false,
             panControl: false,
@@ -191,7 +191,9 @@
     if (typeof (map) != 'undefined' && map != null) {
         google.maps.event.addDomListener(window, 'load', mainMap);
     }
-
+    var markerIcon2 = {
+        url: '/static/images/marker.png',
+    }
     function singleMap() {
         var myLatLng = {
             lng: $('#singleMap').data('longitude'),
@@ -213,12 +215,12 @@
                 "stylers": [{
                     "color": "#f2f2f2"
                 }]
-            }]
+            }] 
         });
         var marker = new google.maps.Marker({
             position: myLatLng,
             map: single_map,
-            icon: markerIcon,
+            icon: markerIcon2,
             title: 'Our Location'
         });
         var zoomControlDiv = document.createElement('div');

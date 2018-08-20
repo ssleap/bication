@@ -1,4 +1,5 @@
 //   all ------------------
+var global_imput
 function initCitybook() {
     "use strict";
     //   loader ------------------
@@ -709,10 +710,21 @@ $.get("http://ipinfo.io", function (response) {
       });
     }); 
  function initAutocomplete() {
-            var input = document.getElementById('autocomplete-input');
-            var autocomplete = new google.maps.places.Autocomplete(input);
-            autocomplete.addListener('place_changed', function() {
-              var place = autocomplete.getPlace();
+            var input1 = document.getElementById('autocomplete-input1');
+            var input2 = document.getElementById('autocomplete-input2');
+            var autocomplete1 = new google.maps.places.Autocomplete(input1);
+            autocomplete1.addListener('place_changed', function() {
+                var place = autocomplete1.getPlace();
+                $("#test").text(place);
+                if (!place.geometry) {
+                    window.alert("No details available for input: '" + place.name + "'");
+                    return;
+                }
+            });
+            var autocomplete2 = new google.maps.places.Autocomplete(input2);
+            autocomplete2.addListener('place_changed', function() {
+              var place = autocomplete2.getPlace();
+              $("#test").text(place);
               if (!place.geometry) {
                 window.alert("No details available for input: '" + place.name + "'");
                 return;
