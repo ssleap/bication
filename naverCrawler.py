@@ -5,6 +5,7 @@ from nltk.tokenize import word_tokenize
 from selenium import webdriver
 import re
 import time
+from pymongo import MongoClient
 class naverCrawler:
     def __init__(self,query,chromePath, town = ['서울특별시']):
         self.driver = webdriver.Chrome(chromePath)
@@ -22,7 +23,13 @@ class naverCrawler:
                 tmp = [i.get('href') for i in dom.select('a.name')]
                 self.urls += tmp
     def get(self):
-        places = []
+        self.client = MongoClient("localhost")
+        db = self.client.get_database('naver')
+        try:
+            naver = db.create_collection("naverCrawled")
+        except:
+            naver = db.get_collection("naverCrawled")
+        #places = []
         patLng = re.compile(r'12[5-7][.][0-9]+')
         patLat = re.compile(r'3[6-8][.][0-9]+')
         for i in self.urls :
@@ -41,5 +48,5 @@ class naverCrawler:
             html = self.driver.page_source
             dom = BeautifulSoup(html.encode('utf-8', 'html.parser'))
             tmp['img'] = [i.get('src') for i in dom.select('div.thumb > img')]
-            places.append(tmp)
-        return places
+            naver.insert_one(tmp)
+            #places.append(tmp)

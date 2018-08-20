@@ -5,6 +5,7 @@ from nltk.tokenize import word_tokenize
 from selenium import webdriver
 import re
 import time
+from pymongo import MongoClient
 class diningCrawler:
     def __init__(self, townList = ['종로구','서울중구','용산구','성동구','광진구','동대문구','중랑구','성북구','강북구','도봉구','노원구','은평구','서대문구','마포구',
      '양천구','강서구','구로구','금천구','영등포구','동작구','관악구','서초구','송파구','강동구','신사동','논현1동','논현2동','압구정동','청담동','삼성1동',
@@ -28,10 +29,15 @@ class diningCrawler:
 
     #crawling method
     def get(self, chromePath):
-        self.sto = []
+
         imgPat = r'.+cloudfront[.]net.+'
         r = re.compile(imgPat)
         driver = webdriver.Chrome(chromePath)
+        db = self.client.get_database('naver')
+        try:
+            dining = db.create_collection("diningCrawled")
+        except:
+            dining = db.get_collection("diningCrawled")
         for i in self.takeouts :
             tmp = {}
             driver.get(i)
@@ -55,9 +61,9 @@ class diningCrawler:
                     imgList += [i.get('href')]
 
             tmp['img'] = imgList
-            self.sto.append(tmp)
-            time.sleep(3)
-        return sto
+            dining.insert_one(tmp)
+            time.sleep(5)
+        
     
 
 
