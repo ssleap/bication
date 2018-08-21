@@ -32,7 +32,7 @@ def listing():
 @app.route('/dashboard/', methods=['GET','POST'])
 @login_required
 def dashboard():
-    return render_with_opt('dashboard.html', '/dashboard/')
+    return render_with_opt('index.html', '/dashboard/')
 
 
 @app.route('/dashboard/myprofile/', methods=['GET','POST'])
