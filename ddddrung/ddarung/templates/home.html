@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block html_attribs %}
+{% endblock html_attribs %}
+
+<!--=============== <head>  ===============-->
+{%- block styles %}
+{%- endblock styles %}
+<!--=============== </head>  ===============-->
+
+
+<!--=============== <body>  ===============-->
+{% block body_attribs %}
+
+{% endblock body_attribs %}
+
+ <!--error message-->
+{% block error_alerts -%}
+
+{%- endblock error_alerts %}
+
+<!--content container-->
+{% block content -%}
+<!-- wrapper -->
+<div id="wrapper">
+    <!-- Content-->
+    <div class="content">
+        <!--section -->
+        <section class="scroll-con-sec hero-section home" data-scrollax-parent="true" id="sec1">
+            <div class="slideshow-container" data-scrollax="properties: { translateY: '200px' }" >
+                <!-- slideshow-item -->
+                <div class="slideshow-item">
+                    <div class="bg"  data-bg="/static/images/bg/1.jpg"></div>
+                </div>
+                <!--  slideshow-item end  -->
+                <!-- slideshow-item -->
+                <div class="slideshow-item">
+                    <div class="bg"  data-bg="/static/images/bg/2.jpg"></div>
+                </div>
+                <!--  slideshow-item end  -->
+                <!-- slideshow-item -->
+                <div class="slideshow-item">
+                    <div class="bg"  data-bg="/static/images/bg/3.jpg"></div>
+                </div>
+                <!--  slideshow-item end  -->
+                <!-- slideshow-item -->
+                <div class="slideshow-item">
+                    <div class="bg"  data-bg="/static/images/bg/4.png"></div>
+                </div>
+                <!--  slideshow-item end  -->
+            </div>
+            <div class="overlay"></div>
+            <div class="hero-section-wrap fl-wrap">
+                <div class="container">
+                   <div class="intro-item fl-wrap">
+                        <h2>목적지를 향한 여가 생활을 찾아보세요</h2>
+                        <h3>#테이크아웃 맛집 #이쁜 공원 #시선을 사로잡는 야경</h3>
+                    </div>
+                    <div class="main-search-input-wrap">
+                        <div class="main-search-input fl-wrap">
+{#                        <div class="main-search-input-item">#}
+{#                            <input type="text" placeholder="What are you looking for?" value=""/>#}
+{#                        </div>#}
+                            <div class="main-search-input-item location" id="autocomplete-container">
+                                <input type="text" placeholder="Source" id="autocomplete-input" value=""/>
+                                <a href="#"><i class="fa fa-dot-circle-o"></i></a>
+                            </div>
+                            <div class="main-search-input-item location" id="autocomplete-container">
+                                <input type="text" placeholder="Destination" id="autocomplete-input" value=""/>
+                                <a href="#"><i class="fa fa-dot-circle-o"></i></a>
+                            </div>
+                            <div class="main-search-input-item">
+                                <select data-placeholder="All Categories" class="chosen-select" >
+                                    {% for category in categories %}
+                                        <option> {{ category }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <button class="main-search-button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
+                        </div>
+                    </div>
+                    <div class="distance-input fl-wrap">
+                        <div class="distance-title" style="color:white"> 여유 시간 <span></span> min</div>
+                        <div class="distance-radius-wrap fl-wrap">
+                            <input class="distance-radius rangeslider--horizontal" type="range" min="10" max="200" step="10" value="1" data-title="Radius around selected destination">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bubble-bg"> </div>
+        </section>
+        <!-- section end -->
+
+        <!--section -->
+        {%- for lists in category_list %}
+        <section class="gray-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>{{ lists["cat_name"] }}</h2>
+                    <div class="section-subtitle">Best Listings</div>
+                    <span class="section-separator"></span>
+                    <p>{{ lists["pop_tags"] }}</p>
+                </div>
+            </div>
+            <!-- carousel -->
+            <div class="list-carousel fl-wrap card-listing ">
+                <!--listing-carousel-->
+                <div class="listing-carousel  fl-wrap ">
+                    <!--slick-slide-item-->
+                    {%- for item in lists["items"] %}
+                    <div class="slick-slide-item">
+                        <!-- listing-item -->
+                        <div class="listing-item">
+                            <article class="geodir-category-listing fl-wrap">
+                                <div class="geodir-category-img">
+                                    <img src="{{ item["img"] }}" alt="">
+                                    <div class="overlay"></div>
+                                    <div class="list-post-counter"><span>{{ item["mark_cnt"] }}</span><i class="fa fa-heart"></i></div>
+                                </div>
+                                <div class="geodir-category-content fl-wrap">
+{#                                    <a class="listing-geodir-category" href="listing.html">Retail</a>#}
+{#                                    <div class="listing-avatar"><a href="author-single.html"><img src="/static/images/avatar/1.jpg" alt=""></a>#}
+{#                                        <span class="avatar-tooltip">Added By  <strong>Lisa Smith</strong></span>#}
+{#                                    </div>#}
+                                    <h3><a href="listing-single.html">{{ item["title"] }}</a></h3>
+                                    <p>{{ item["text"] }}</p>
+                                    <div class="geodir-category-options fl-wrap">
+                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="{{ item["star_cnt"] }}">
+                                            <span>({{ item["rev_cnt"] }} reviews)</span>
+                                        </div>
+                                        <div class="geodir-category-location"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ item["addr"] }}</a></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- listing-item end-->
+                    </div>
+                    <!--slick-slide-item end-->
+                    {%- endfor %}
+                </div>
+                <!--listing-carousel end-->
+                <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+            </div>
+            <!--  carousel end-->
+        </section>
+        {%- endfor %}
+        <!-- section end -->
+
+    </div>
+    <!-- Content end -->
+</div>
+<!-- wrapper end -->
+
+
+{%- endblock content %}
+
+<!--========== additonal scripts  ==========-->
+{% block scripts %}
+
+{%- endblock scripts %}
+
+<!--=============== <body>  ===============-->

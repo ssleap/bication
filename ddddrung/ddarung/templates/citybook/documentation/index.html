@@ -1,0 +1,841 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Citybook -Directory Listing Template</title>
+	
+	
+	<link rel="stylesheet" href="css/documenter_style.css" media="all">
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_1.png);}
+		a{color:#DE6325;}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ol a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ol{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ol a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ol a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ol a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+		<script src="js/jquery.1.6.4.js"></script>
+	
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script src="js/jquery.easing.js"></script>
+	
+	<link rel="stylesheet" href="css/shDocumenter.css" media="screen">
+	<script src="js/shCore.js"></script>
+	<script src="js/shBrushCss.js"></script>
+	<script src="js/shBrushXml.js"></script>
+	<script src="js/shBrushJScript.js"></script>
+	<script src="js/shBrushPhp.js"></script>
+	<script>SyntaxHighlighter.defaults['toolbar'] = false;SyntaxHighlighter.all();</script>
+
+	<script>document.createElement('section');var duration=500,easing='swing';</script>
+	<script src="js/script.js"></script>
+	
+</head>
+<body>
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ol id="documenter_nav">
+			<li><a href="#documenter_cover">Start - Files</a></li>
+ 
+			<li><a href="#structure">Structure</a></li>
+			<li><a href="#colors">Color</a></li>
+			<li><a href="#images">Images</a></li>
+			<li><a href="#icons">Icons</a></li>
+			<li><a href="#contact_form">Contact form</a></li>
+			<li><a href="#video">Video background</a></li>
+			<li><a href="#sub">Subscribe mailchimp</a></li>
+			<li><a href="#share">Share</a></li>
+			<li><a href="#map">Map</a></li>
+			<li><a href="#twitter">Twitter</a></li>
+			<li><a href="#counter">Counter</a></li>
+			<li><a href="#sources_credits">Sources & Credits</a></li>
+			<li><a href="#update">Updates</a></li>
+			<li><a href="#thanks">Thanks</a></li>
+
+		</ol>
+	</div>
+	<div id="documenter_content">
+	
+	
+	
+	<section id="documenter_cover"><h1>Citybook </h1><h2> Directory Listing Template</h2><hr><ul><li>Created: 03/02/2018</li><li>latest Update: 03/02/2018</li><li>By: KWST</li><li><a href="http://themeforest.net/user/kwst"></a></li><li>Email: <a href="mailto:support@kwst.net">support@kwst.net</a></li></ul>
+	<p>Thanks for purchasing tempalte and for supporting my work. Citybook -Directory Listing Template. This documentation will not teach you HTML & CSS, it's just showcase of custom elements used in template.  </p> <br>
+	<p><strong style="color:red"> Very important !</strong> In order to work php scripts (contact form)- your site files must reside on the local host or server. In turn, you can easily edit any page (all JavaScript files will work).</p>
+<br><br><h3>Files</h3><hr class="notop"><br>
+<p>All site files are divided into folders:<br><br>
+<strong>css folder</strong> - css files that are responsible for the style themes.<br>
+<strong>js folder</strong> - javascript files.<br>
+<strong>php folder</strong> - php files.<br>
+<strong>video folder</strong> - video files.<br>
+<strong>images folder</strong> - folder that contains all images.<br>
+<strong>fonts folder</strong> - folder that contains  fonts plugin "Font-Awesome".<br>
+ 
+</p>
+
+
+</section>
+<div class="clerfix"></div>
+ 
+
+
+	
+
+<section id="structure">
+<h3>Header</h3><hr class="notop">
+ 
+<p>Contains : Logo , naviagtion , search form , button "add listing" , user navigation (dashboard pages)</p>
+ <pre class="brush: html">
+             <!-- header-->
+            <header class="main-header dark-header fs-header sticky">
+                <div class="header-inner">
+                    <div class="logo-holder">
+                        <a href="index.html"><img src="images/logo.png" alt=""></a>
+                    </div>
+                    <div class="header-search vis-header-search">
+                        <div class="header-search-input-item">
+                            <input type="text" placeholder="Keywords" value=""/>
+                        </div>
+                        <div class="header-search-select-item">
+                            <select data-placeholder="All Categories" class="chosen-select" >
+                                <option>All Categories</option>
+                                <option>Shops</option>
+                                <option>Hotels</option>
+                                <option>Restaurants</option>
+                                <option>Fitness</option>
+                                <option>Events</option>
+                            </select>
+                        </div>
+                        <button class="header-search-button" onclick="window.location.href='listing.html'">Search</button>
+                    </div>
+                    <div class="show-search-button"><i class="fa fa-search"></i> <span>Search</span></div>
+                    <a href="dashboard-add-listing.html" class="add-list">Add Listing <span><i class="fa fa-plus"></i></span></a>
+                    <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div>
+                    <!-- nav-button-wrap-->
+                    <div class="nav-button-wrap color-bg">
+                        <div class="nav-button">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <!-- nav-button-wrap end-->
+                    <!--  navigation -->
+                    <div class="nav-holder main-menu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#" class="act-link">Home <i class="fa fa-caret-down"></i></a>
+                                    <!--second level -->
+                                    <ul>
+                                        <li><a href="index.html">Parallax Image</a></li>
+                                        <li><a href="index2.html">Video</a></li>
+                                        <li><a href="index3.html">Map</a></li>
+                                        <li><a href="index4.html">Slideshow</a></li>
+                                        <li><a href="index5.html">Sider</a></li>
+                                    </ul>
+                                    <!--second level end-->
+                                </li>
+                                <li>
+                                    <a href="#">Listings <i class="fa fa-caret-down"></i></a>
+                                    <!--second level -->
+                                    <ul>
+                                        <li><a href="listing.html">Column map</a></li>
+                                        <li><a href="listing2.html">Column map 2</a></li>
+                                        <li><a href="listing3.html">Fullwidth Map</a></li>
+                                        <li><a href="listing4.html">Fullwidth Map 2</a></li>
+                                        <li><a href="listing5.html">Without Map</a></li>
+                                        <li><a href="listing6.html">Without Map 2</a></li>
+                                        <li>
+                                            <a href="#">Single <i class="fa fa-caret-down"></i></a>
+                                            <!--third  level  -->
+                                            <ul>
+                                                <li><a href="listing-single.html">Style 1</a></li>
+                                                <li><a href="listing-single2.html">Style 2</a></li>
+                                                <li><a href="listing-single3.html">Style 3</a></li>
+                                            </ul>
+                                            <!--third  level end-->
+                                        </li>
+                                    </ul>
+                                    <!--second level end-->
+                                </li>
+                                <li>
+                                    <a href="blog.html">News</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pages <i class="fa fa-caret-down"></i></a>
+                                    <!--second level -->
+                                    <ul>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contacts.html">Contacts</a></li>
+                                        <li><a href="author-single.html">User single</a></li>
+                                        <li><a href="how-itworks.html">How it Works</a></li>
+                                        <li><a href="pricing-tables.html">Pricing</a></li>
+                                        <li><a href="dashboard-myprofile.html">User Dasboard</a></li>
+                                        <li><a href="blog-single.html">Blog Single</a></li>
+                                        <li><a href="dashboard-add-listing.html">Add Listing</a></li>
+                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                                        <li><a href="header2.html">Header 2</a></li>
+                                        <li><a href="footer-fixed.html">Footer Fixed</a></li>
+                                    </ul>
+                                    <!--second level end-->
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- navigation  end -->
+                </div>
+            </header>
+            <!--  header end -->
+
+</pre>
+
+ <h3>Header style 2 </h3><hr class="notop">
+ 
+ 
+ 
+<p>Uses a class <strong>"center-header"</strong> </p>
+
+ <pre class="brush: html">
+            <!-- header-->
+            <header class="main-header dark-header center-header sticky">
+                <div class="header-inner">
+                    <div class="logo-holder">
+                        <a href="index.html"><img src="images/logo.png" alt=""></a>
+                    </div>
+                    <div class="header-search vis-header-search">
+                        <div class="header-search-input-item">
+                            <input type="text" placeholder="Keywords" value=""/>
+                        </div>
+                        <div class="header-search-select-item">
+                            <select data-placeholder="All Categories" class="chosen-select" >
+                                <option>All Categories</option>
+                                <option>Shops</option>
+                                <option>Hotels</option>
+                                <option>Restaurants</option>
+                                <option>Fitness</option>
+                                <option>Events</option>
+                            </select>
+                        </div>
+                        <button class="header-search-button" onclick="window.location.href='listing.html'">Search</button>
+                    </div>
+                    <div class="show-search-button"><i class="fa fa-search"></i> <span>Search</span></div>
+                    <a href="dashboard-add-listing.html" class="add-list">Add Listing <span><i class="fa fa-plus"></i></span></a>
+                    <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div>
+                    <!-- nav-button-wrap--> 
+                    <div class="nav-button-wrap color-bg">
+                        <div class="nav-button">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <!-- nav-button-wrap end-->
+                    <!--  navigation --> 
+                    <div class="nav-holder main-menu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">Home <i class="fa fa-caret-down"></i></a>
+                                    <!--second level -->   
+                                    <ul>
+                                        <li><a href="index.html">Parallax Image</a></li>
+                                        <li><a href="index2.html">Video</a></li>
+                                        <li><a href="index3.html">Map</a></li>
+                                        <li><a href="index4.html">Slideshow</a></li>
+                                        <li><a href="index5.html">Sider</a></li>
+                                    </ul>
+                                    <!--second level end-->
+                                </li>
+                                <li>
+                                    <a href="#">Listings <i class="fa fa-caret-down"></i></a>
+                                    <!--second level -->
+                                    <ul>
+                                        <li><a href="listing.html">Column map</a></li>
+                                        <li><a href="listing2.html">Column map 2</a></li>
+                                        <li><a href="listing3.html">Fullwidth Map</a></li>
+                                        <li><a href="listing4.html">Fullwidth Map 2</a></li>
+                                        <li><a href="listing5.html">Without Map</a></li>
+                                        <li><a href="listing6.html">Without Map 2</a></li>
+                                        <li>
+                                            <a href="#">Single <i class="fa fa-caret-down"></i></a>
+                                            <!--third  level  -->
+                                            <ul>
+                                                <li><a href="listing-single.html">Style 1</a></li>
+                                                <li><a href="listing-single2.html">Style 2</a></li>
+                                                <li><a href="listing-single3.html">Style 3</a></li>
+                                            </ul>
+                                            <!--third  level end-->
+                                        </li>
+                                    </ul>
+                                    <!--second level end-->
+                                </li>
+                                <li>
+                                    <a href="blog.html">News</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="act-link">Pages <i class="fa fa-caret-down"></i></a>
+                                    <!--second level -->   
+                                    <ul>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contacts.html">Contacts</a></li>
+                                        <li><a href="author-single.html">User single</a></li>
+                                        <li><a href="how-itworks.html">How it Works</a></li>
+                                        <li><a href="pricing-tables.html">Pricing</a></li>
+                                        <li><a href="dashboard-myprofile.html">User Dasboard</a></li>
+                                        <li><a href="blog-single.html">Blog Single</a></li>
+                                        <li><a href="dashboard-add-listing.html">Add Listing</a></li>
+                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                                        <li><a href="footer-fixed.html">Footer Fixed</a></li>
+                                        <li><a href="header2.html">Header 2</a></li>
+                                    </ul>
+                                    <!--second level end-->                                
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- navigation  end -->
+                </div>
+            </header>
+            <!-- header end  -->	
+
+		
+</pre>
+
+ <h3>Wrapper </h3><hr class="notop">
+ 
+ 
+ 
+<p>Contains : Tempale code (text images etc ).</p>
+
+
+ <pre class="brush: html">
+            <!-- wrapper -->	
+            <div id="wrapper">
+                <!--content-->	
+                <div class="content">
+				
+				.........Content.......
+				
+                </div>
+                <!-- content end -->
+            </div>
+            <!-- wrapper end -->
+
+
+
+		
+</pre>
+ <h3>Footer  </h3><hr class="notop">
+ 
+ 
+ 
+<p>Fixed footer Uses a class <strong>"fixed-footer"</strong>  . </p>
+
+
+ <pre class="brush: html">
+            <!--footer -->
+            <footer class="main-footer dark-footer  fixed-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="footer-widget fl-wrap">
+                                <h3>About Us</h3>
+                                <div class="footer-contacts-widget fl-wrap">
+                                    <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam. </p>
+                                    <ul  class="footer-contacts fl-wrap">
+                                        <li><span><i class="fa fa-envelope-o"></i> Mail :</span><a href="#" target="_blank">yourmail@domain.com</a></li>
+                                        <li> <span><i class="fa fa-map-marker"></i> Adress :</span><a href="#" target="_blank">USA 27TH Brooklyn NY</a></li>
+                                        <li><span><i class="fa fa-phone"></i> Phone :</span><a href="#">+7(111)123456789</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footer-widget fl-wrap">
+                                <h3>Our Last News</h3>
+                                <div class="widget-posts fl-wrap">
+                                    <ul>
+                                        <li class="clearfix">
+                                            <a href="#"  class="widget-posts-img"><img src="images/all/1.jpg" class="respimg" alt=""></a>
+                                            <div class="widget-posts-descr">
+                                                <a href="#" title="">Vivamus dapibus rutrum</a>
+                                                <span class="widget-posts-date"> 21 Mar 09.05 </span> 
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <a href="#"  class="widget-posts-img"><img src="images/all/2.jpg" class="respimg" alt=""></a>
+                                            <div class="widget-posts-descr">
+                                                <a href="#" title=""> In hac habitasse platea</a>
+                                                <span class="widget-posts-date"> 7 Mar 18.21 </span> 
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <a href="#"  class="widget-posts-img"><img src="images/all/3.jpg" class="respimg" alt=""></a>
+                                            <div class="widget-posts-descr">
+                                                <a href="#" title="">Tortor tempor in porta</a>
+                                                <span class="widget-posts-date"> 7 Mar 16.42 </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footer-widget fl-wrap">
+                                <h3>Our  Twitter</h3>
+                                <div id="footer-twiit"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footer-widget fl-wrap">
+                                <h3>Subscribe</h3>
+                                <div class="subscribe-widget fl-wrap">
+                                    <p>Want to be notified when we launch a new template or an udpate. Just sign up and we'll send you a notification by email.</p>
+                                    <div class="subcribe-form">
+                                        <form id="subscribe">
+                                            <input class="enteremail" name="email" id="subscribe-email" placeholder="Email" spellcheck="false" type="text">
+                                            <button type="submit" id="subscribe-button" class="subscribe-button"><i class="fa fa-rss"></i> Subscribe</button>
+                                            <label for="subscribe-email" class="subscribe-message"></label>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="footer-widget fl-wrap">
+                                    <div class="footer-menu fl-wrap">
+                                        <ul>
+                                            <li><a href="#">Home </a></li>
+                                            <li><a href="#">Blog</a></li>
+                                            <li><a href="#">Listing</a></li>
+                                            <li><a href="#">Contacts</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-footer fl-wrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="about-widget">
+                                    <img src="images/logo.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="copyright"> &#169; CityBook 2018 .  All rights reserved.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="footer-social">
+                                    <ul>
+                                        <li><a href="#" target="_blank" ><i class="fa fa-facebook-official"></i></a></li>
+                                        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" target="_blank" ><i class="fa fa-chrome"></i></a></li>
+                                        <li><a href="#" target="_blank" ><i class="fa fa-vk"></i></a></li>
+                                        <li><a href="#" target="_blank" ><i class="fa fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--footer end  -->
+
+</pre>
+
+
+ 
+ </section>	
+ <section id="colors">
+<h3>Colors</h3>
+<p>By default, 'Citybook' has a global color - light blue ( 4DB7FE).<strong>To change the color, you must do the following steps:</strong>
+<br>
+1. Locate the folder css  file <strong>color.css</strong> and open it with your text editor.	
+<br>
+2.In this file, you should find a line responsible for the color theme. Look at the code below.
+<br>
+3. Just replace the six numbers and letters after the lattice in the file "color.css". Forgot to mention the theme color using hex format. If you want to add color format "rgba" then need to remove the lattice. If you do not know where to find the code of the color you click on this <a href="http://www.color-hex.com/color-palettes/" target="_blank">link</a>.</p>
+
+<pre class="brush: css">
+@charset "utf-8";
+/*--
+	Color styles
+--*/
+ .info-button:hover , .footer-social li a  , .lost_password a:hover , .nav-holder nav li a.act-link  , .nav-holder nav li a:hover ,   .testi-text:before , .testi-text:after , #footer-twiit  .timePosted a:before , .map-popup-location-phone i , .map-popup-location-info i , .dark-header .nav-holder nav li ul a:hover , .main-register h3 span strong , .main-register label i , .listsearch-header h3 span , .listing-view-layout li  a.active  , .listsearch-input-text   label i , .distance-title i , .listsearch-input-item i , .filter-tags input:checked:after , .more-filter-option:hover , .distance-title span  , .selectbox li.selected , .mapzoom-in:hover  , .mapzoom-out:hover , .footer-widget .widget-posts-date , .listsearch-input-text span.loc-act , .list-single-header-contacts li i , .viewed-counter i , .list-single-header-column .custom-scroll-link i  , .list-single-header-cat span i , .scroll-nav-wrapper .scroll-nav li a.act-scrlink , .listing-features li i  , .list-author-widget-contacts  li span i , .list-author-widget-contacts  li a:hover  , .current-status i , .scroll-nav-wrapper .save-btn i , .list-single-contacts li i , .list-post-counter.single-list-post-counter i , .reviews-comments-item-date i , .list-single-main-item-title span , .custom-form label i , .custom-form .quantity span i   , .box-widget.widget-posts   .widget-posts-date i , .box-widget.widget-posts .widget-posts-descr a:hover , .team-social li a , .team-info h3 a:hover ,.section-title h2 a , section.color-bg .header-sec-link a:hover , .user-profile-menu li a.user-profile-act , .user-profile-menu li a:hover , .log-out-btn , .pass-input-wrap span , .header-user-name:before , .header-user-menu ul li a:hover , .reply-mail a , .dashboard-message-text h4 span , .profile-edit-page-header .breadcrumbs span , .profile-edit-page-header .breadcrumbs a:hover , .reviews-comments-item-link , .fuzone:hover .fu-text i  ,  .radio input[type="radio"]:checked + span:before , .booking-details a , .booking-details span.booking-text , .dashboard-listing-table-address i , .post-opt li i , .list-single-main-item-title  h3 a:hover , .post-opt li a:hover , .post-link i , .post-link:hover  , .tl-text i , .tl-text  h3   , .features-box .time-line-icon i , .features-box h3 , .images-collage-title span  , .process-item .time-line-icon i , .card-post-content h3 a:hover  , .card-listing  .list-post-counter i , .section-subtitle  , .process-item:hover .process-count  , .footer-contacts li i , .main-search-input-item.location a , .card-listing .geodir-category-location i  , .show-reg-form:hover , .show-search-button i , .menusb   li  a i , .menusb a.back:before , .menusb a.act-link , .sp-cont  , .list-single-tags a:hover , .card-listing .geodir-category-content h3 a:hover , #footer-twiit a:hover , .subscribe-message.error a  , .share-holder.hid-share .share-container  .share-icon , .footer-contacts li a:hover , .listing-title  a:hover {
+	color:#4DB7FE;
+}
+.navslide-wrap , .slide-progress , nav li  a.act-link:before , .hs-nav  .navslide-wrap.next-slide-wrap a , .folio-counter , .add-list ,  .section-separator:before , .listing-carousel-wrap  .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active , .card-btn:hover,  .footer-widget #subscribe-button , .custom-form .log-submit-btn  , .add-list , .parallax-section .section-separator:before    , .sw-btn , .color-bg , .mapzoom-in , .mapzoom-out , .infoBox-close ,  .close-reg  , .header-search-button , .listing-view-layout li  a  , .listsearch-input-item .selectbox , .rangeslider__fill , .fs-map-btn , .more-filter-option span , .back-to-filters , .back-to-filters span  , .pin , .load-more-button , .footer-menu  li:before , .pagination a.current-page, .pagination a:hover , .section-title .breadcrumbs a:before  , .showshare , .scroll-nav-wrapper .scroll-nav li a:before , .list-single-main-wrapper .breadcrumbs   , .list-widget-social li a , .btn.transparent-btn:hover , .btn.flat-btn  , .accordion a.toggle.act-accordion , .custom-form .quantity input.qty , .widget-posts-link span , .box-item a.gal-link  , .custom-form .selectbox , .photoUpload , .user-profile-menu li a span , .tabs-menu  li.current a , .tabs-menu  li a:hover , .header-social li a:hover , .main-search-button , .selectbox li:hover , .color-overlay , .trs-btn , .testi-counter , .to-top , .header-sec-link a , .card-btn ,  .profile-edit-page-header .breadcrumbs a:before   , .dashboard-listing-table-opt li  a.del-btn , .search-widget .search-submit , .box-widget-item .list-single-tags a , .reviews-comments-item-text .new-dashboard-item:hover , .step-item  , .video-box-btn , .slick-dots li.slick-active button , .time-line-container:before  , .error-wrap form   .search-submit , .testimonials-carousel .slick-current .testimonilas-text , .cs-social li a , .cs-countdown-item:before , .listing-counter , .price-head , .price-link , .sp-cont:hover , .cluster div , .lg-actions .lg-next, .lg-actions .lg-prev , .log-out-btn:hover  , .map-popup-category , .mapnavigation a:hover {
+	background:#4DB7FE;
+}
+.listing-view-layout li  a.active , .rangeslider__handle , .list-author-widget-text .btn  , .btn.transparent-btn , .log-out-btn   , blockquote , .cluster div:before  {
+	border-color:#4DB7FE;
+}
+.listing-rating i {
+	color:#FACC39;
+}
+.gradient-bg , .listing-geodir-category  ,     .list-single-header-cat a , .box-widget-item .list-single-tags a:hover  , .nav-holder nav li a:before{
+  background-color: #3EAAFD;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3EAAFD), to(#49CEFF));
+  background: -webkit-linear-gradient(top, #3EAAFD, #49CEFF);
+  background: -moz-linear-gradient(top, #3EAAFD, #49CEFF);
+  background: -ms-linear-gradient(top, #3EAAFD, #49CEFF);
+  background: -o-linear-gradient(top, #3EAAFD, #49CEFF);
+} 
+
+</pre>
+
+</section>
+
+
+<section id="images">	
+<h3>Images</h3><hr class="notop">
+<p>All images are in the folder "images".<br>       
+</p>
+<br>
+<h3>How to add and change the background image</h3>
+
+<p>To change the background you can simply change the path in the style rendered in html code, for example : </p>
+<pre class="brush: html">
+ 
+<div class="bg"  data-bg="images/bg/1.jpg"></div>
+	
+</pre>
+ 
+
+  
+</section>
+
+<section id="icons">
+	<h3>Icons</h3><hr class="notop">
+<p>	All  icons are generated by the plugin <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">"Font-Awesome"</a>. List of all the icons can be found <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">here</a>. 
+<br>
+To change the icon, you have to copy and paste the code icon at the right place for you. Icons size-five . Read the documentation plugin - it is described in detail how to change the icons size.
+
+</p>
+<p>For example: </p>
+<pre class="brush: html">
+
+                            <ul>
+                                <li><a href="#" target="_blank" ><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank" ><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#" target="_blank" ><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="#" target="_blank" ><i class="fa fa-tumblr"></i></a></li>
+                            </ul>
+
+</pre>
+
+<p>&nbsp;
+	</p>
+</section>
+
+ 
+
+<section id="contact_form">
+	<h3>Contact Form</h3><hr class="notop">
+<p>
+Find the file "contact_me" in the folder <strong>php</strong> . In this file, find the line <strong style="color:red">$to_Email = "myemail@gmail.com";</strong> and add you e-mail.</p> 
+<p>How to forward mail to your mailbox ask your Hosting Service Provider. Because providers use different control panel site and I find it hard to predict what you use. Server side script for sending emails is in "contact_me.php" . Ajax submit is initialized in "scripts.js" file.</p>
+<p>&nbsp;
+	</p>
+	
+<pre class="brush: js">
+	// contact form ------------------
+    $("#contactform").submit(function() {
+        var a = $(this).attr("action");
+        $("#message").slideUp(750, function() {
+            $("#message").hide();
+            $("#submit").attr("disabled", "disabled");
+            $.post(a, {
+                name: $("#name").val(),
+                email: $("#email").val(),
+                comments: $("#comments").val()
+            }, function(a) {
+                document.getElementById("message").innerHTML = a;
+                $("#message").slideDown("slow");
+                $("#submit").removeAttr("disabled");
+                if (null != a.match("success")) $("#contactform").slideDown("slow");
+            });
+        });
+        return false;
+    });
+    $("#contactform input, #contactform textarea").keyup(function() {
+        $("#message").slideUp(1500);
+    });
+
+</pre>
+</section>
+
+
+
+<section id="video">
+<h3>Video</h3><hr class="notop">
+
+
+<p>This template uses Youtube Vimeo and html5  video as background . To add your video  in html file find line :</p>
+<strong>Youtube</strong>
+<pre class="brush: html">
+ 
+<div  class="background-youtube-wrapper" data-vid="oDpSPNIozt8" data-mv="1"> </div>
+</pre>
+<p>add you video id  in<strong> data-vid=""</strong> if you want add sound change data-mv="1" on data-mv="0" </p>
+<strong>Html5</strong>
+<pre class="brush: html">
+                                        <video autoplay  loop muted  class="bgvid">
+                                            <source src="video/1.mp4" type="video/mp4">
+                                        </video>
+
+</pre>
+<p>add you video id  in source <strong> src="video/1.mp4" type="video/mp4" </strong> </p>
+
+<strong>VImeo</strong>
+<pre class="brush: html">
+  <div  class="background-vimeo" data-vim="97871257"> </div>
+
+</pre>
+<p>add you video id  in source <strong> data-vim="97871257" </strong> </p>
+
+<p>And yet the video does not play on smartphones :( - so if a user comes to your site from a mobile browser - the background is replaced by a picture :)</p>
+ 
+ 
+
+ 
+
+
+ </section>	
+	
+<section id="sub">
+<h3>Subscribe mailchimp</h3><hr class="notop">
+
+ 
+<p>  To set up the subscription form, you must perform the following steps :</p>
+<p>
+1. Sign up  on <a href="http://mailchimp.com/" target="_blank">mailchimp</a> . It's free.	
+<br>
+2. Next, open the 	  <strong style="color:red">Lists --- Signup forms --- Embedded forms </strong> 
+<br>
+3. Locate the folder js  file <strong>scripts.js</strong> and open it with your text editor.	
+<br>
+4.In this file, you should find a code :
+<br>
+ </p>
+<pre class="brush: js">
+//=============== subscribe form  ==============
+    // Example MailChimp url: http://xxx.xxx.list-manage.com/subscribe/post?u=xxx&id=xxx
+ 
+    $('#subscribe').ajaxChimp({
+        language: 'eng',
+        url: 'http://kwst.us9.list-manage1.com/subscribe/post?u=992ebe1f14864e841317ca145&id=163340d9c8'
+    });
+
+    // Mailchimp translation
+    //
+    // Defaults:
+    //'submit': 'Submitting...',
+    //  0: 'We have sent you a confirmation email',
+    //  1: 'Please enter a value',
+    //  2: 'An email address must contain a single @',
+    //  3: 'The domain portion of the email address is invalid (the portion after the @: )',
+    //  4: 'The username portion of the email address is invalid (the portion before the @: )',
+    //  5: 'This email address looks fake or invalid. Please enter a real email address'
+
+    $.ajaxChimp.translations.eng = {
+        'submit': 'Submitting...',
+        0: '<i class="fa fa-check"></i> We will be in touch soon!',
+        1: '<i class="fa fa-warning"></i> You must enter a valid e-mail address.',
+        2: '<i class="fa fa-warning"></i> E-mail address is not valid.',
+        3: '<i class="fa fa-warning"></i> E-mail address is not valid.',
+        4: '<i class="fa fa-warning"></i> E-mail address is not valid.',
+        5: '<i class="fa fa-warning"></i> E-mail address is not valid.'
+    }
+</pre>
+ 
+<p> 5.In the form  <strong style="color:red">Copy/paste onto your site </strong> copy code <strong style="color:red">"http://xxx.xxx.list-manage.com/subscribe/post?u=xxx&id=xxx" </strong> copy of the code and substitute your own values instead "xxx"  For example : </p>
+
+<pre class="brush: js">
+
+ 
+    $('#subscribe').ajaxChimp({
+        language: 'eng',
+        url: 'http://kwst.us9.list-manage1.com/subscribe/post?u=992ebe1f14864e841317ca145&id=163340d9c8'
+    });
+
+</pre>
+
+ </section>	
+
+
+<section id="share">
+<h3>Share your pages</h3><hr class="notop">
+<p>To configure the plugin  in file scripts.js  find line :</p>
+<pre class="brush: js"> 		
+        networks: [ "facebook", "pinterest", "googleplus", "twitter", "linkedin" ]
+</pre>
+<p>You can simply add a comma in line: <strong>social: 'facebook','pinterest','googleplus','twitter','linkedin' 'foursquare' , 'flickr', 'digg' , 'tumblr', 'vimeo' , 'stumbleupon'</strong>  separated names of social networks .  </p>
+</section>
+ 
+ 
+ <section id="map">
+<h3>Map Single</h3><hr class="notop">
+<p>To configure the single  map   in  HTML file  find code :</p>
+<pre class="brush: html"> 		
+<div id="singleMap" data-latitude="40.7427837" data-longitude="-73.11445617675781"></div>
+	
+</pre>
+<p> And add your own values data-latitude="40.7427837" data-longitude="-73.11445617675781". To find the coordinates - visit this <a href="http://www.mapcoordinates.net/en" target="_blank"><strong style="color:red">link</strong></a>  </p>
+
+
+<h3>Map Listing</h3><hr class="notop">
+
+<p>To configure the Listing  map   in   file maps.js  find code :</p>
+<pre class="brush: js"> 		
+        var locations = [
+            [locationData('listing-single2.html', 'Hotels', 'images/all/1.jpg', 'Luxary Hotel-Spa', "1327 Intervale Ave, Bronx, NY ", "+38099231212", "5", "27"), 40.72956781, -73.99726866, 1, markerIcon],
+            [locationData('listing-single.html', 'Food and Drink', 'images/all/1.jpg', 'Luxary Restaurant', "W 85th St, New York, NY ", "+38099231212", "4", "5"), 40.76221766, -73.96511769, 2, markerIcon],
+            [locationData('listing-single.html', 'Gym - Fitness', 'images/all/1.jpg', 'Gym In CityCenter', "40 Journal Square Plaza, Jersey City, NJ", "+38099231212", "4", "5"), 40.88496706, -73.88191222, 3, markerIcon],
+            [locationData('listing-single.html', 'Shop - Store', 'images/all/1.jpg', 'Shop In City Mol', "75 Prince St, New York, NY ", "+38099231212", "4", "127"), 40.72228267, -73.99246214, 4, markerIcon],
+            [locationData('listing-single.html', 'Food and Drink', 'images/all/1.jpg', 'Luxary Restaurant', "34-42 Montgomery St, New York, NY", "+38099231212", "5", "43"), 40.94982541, -73.84357452, 5, markerIcon],
+            [locationData('listing-single.html', 'Gym - Fitness', 'images/all/1.jpg', 'Gym In CityCenter', "70 Bright St, Jersey City, NJ", "+38099231212", "4", "7"), 40.90261483, -74.15737152, 6, markerIcon],
+            [locationData('listing-single.html', 'Shop - Store', 'images/all/1.jpg', 'Shop In City Mol', "123 School St. Lynchburg, NY ", "+38099231212", "3", "4"), 40.79145927, -74.08252716, 7, markerIcon],
+            [locationData('listing-single2.html', 'Hotels', 'images/all/1.jpg', 'Fancy Hotel', "Mt Carmel Pl, New York, NY", "+38099231212", "5", "3"), 40.58423508, -73.96099091, 8, markerIcon],
+            [locationData('listing-single2.html', 'Hotels', 'images/all/1.jpg', 'Luxary Hotel-Spa', "1-30 Hunters Point Ave, Long Island City, NY", "+38099231212", "5", "12"), 40.58110616, -73.97678375, 9, markerIcon],
+            [locationData('listing-single3.html', 'Conference and Events', 'images/all/1.jpg', 'Web Design Event ', "726-1728 2nd Ave, New York, NY", "+38099231212", "5", "17"), 40.73112881, -74.07897948, 10, markerIcon],
+            [locationData('listing-single3.html', 'Conference and Events', 'images/all/1.jpg', 'Apartment Design Event ', "9443 Fairview Ave, North Bergen, NJ", "+38099231212", "4", "11"), 40.67386831, -74.10438536, 11, markerIcon],
+        ];	
+</pre>
+<p>Options : <br>
+1.<strong>'listing-single2.html' </strong> - link To single listing.<br>
+2.<strong>'Hotels' </strong> - category.<br>
+3.<strong>'images/all/1.jpg' </strong> - path to image.<br>
+4.<strong>'Luxary Hotel-Spa' </strong> - listing name.<br>
+5.<strong>'1327 Intervale Ave, Bronx, NY' </strong> - address.<br>
+6.<strong>'+38099231212' </strong> - phone number.<br>
+7.<strong>'5' </strong> - stars.<br>
+8.<strong>'27' </strong> -number of reviews.<br>
+</p>
+
+
+
+
+
+
+
+
+<p>Next step you need api key  . To find key visit this  <a href="https://developers.google.com/maps/documentation/javascript/get-api-key"><strong style="color:red">link</strong></a> . And add your key in each page in code :
+
+ </p>
+ <pre class="brush: html">
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY" type="text/javascript"></script>
+</pre>
+</section>
+<section id="twitter">
+<h3>Twitter</h3><hr class="notop">
+<p>To configure the plugin  in file scripts.js find code :</p>
+<pre class="brush: js"> 		
+	if ($("#header-twitts").length > 0) {	
+		var config1 = {
+		  "profile": {"screenName": 'katokli3mmm'},
+		  "domId": 'footer-twiit',
+		  "maxTweets": 5,
+		  "enableLinks": true,
+		  "showImages": false
+		};
+		twitterFetcher.fetch(config1);	
+	}
+</pre>
+<p>Add your profile  name in line  in line: <strong>"profile": {"screenName": 'katokli3mmm'}</strong> . To add more 5 twitts - change value "maxTweets": 5,</p>
+</section>
+ 
+
+<section id="counter">
+<h3>Counter</h3><hr class="notop">
+<p>To configure the date  in html file   find code :</p>
+<pre class="brush: js"> 		
+<div class="box-widget counter-widget gradient-bg" data-countDate="09/12/2019">
+</pre>
+<p>Add your  your date in  : <strong>data-countDate="09/12/2019"</strong> .</p>
+</section>
+ 
+ 
+ 
+ 
+ 
+
+<section id="sources_credits">
+	<h3>Sources & Credits</h3><hr class="notop">
+<p>
+	<strong>Fonts</strong><br>
+	http://www.google.com/fonts<br>
+	<br><br>
+	
+	
+	<strong>Images</strong><br>
+	Shutterstock<br>
+	http://www.shutterstock.com/
+	<br><br>
+ 
+ 	
+	</p>
+
+<p>
+	<strong>Icons</strong><br>
+		Font-Awesome<br>
+	http://fortawesome.github.io/Font-Awesome/</p>
+
+
+
+<p>
+<strong>Javascripts </strong><br><br>
+
+	<strong>JQuery</strong><br>
+	http://jquery.com</p>
+<p>
+	<strong>JQuery Easing</strong><br>
+	http://gsgd.co.uk/sandbox/jquery/easing/</p>
+<p>
+	<strong>Slick Carousel</strong><br>
+	http://kenwheeler.github.io/slick/</p>
+ 
+
+	<p>
+	<strong>isotope</strong><br>
+	http://isotope.metafizzy.co/</p>
+ 	
+	
+		<p>
+	<strong> Lightgallery</strong><br>
+	http://sachinchoolur.github.io/lightGallery/</p>	
+	
+ 
+	
+</section>
+ 
+
+
+<section id="update">
+<h3>Updates</h3><hr class="notop">
+
+
+
+ </section>	
+<section id="thanks">
+	<h3>Thanks</h3><hr class="notop">
+<p>
+	Thanks for purchasing template and for supporting my work. If we fail here in this documentation, please e-mail me  <a href="mailto:support@kwst.net">support@kwst.net</a>. If you have a spare time, please go and rate my template. I will apreciate that.</p>
+<p>
+	Thanks</p>
+</section>
+
+	</div>
+</body>
+</html>
