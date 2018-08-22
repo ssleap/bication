@@ -26,7 +26,7 @@
         var testlat = 40.7
         var testlon = -73.87
         var map = new google.maps.Map(document.getElementById('map-main'), {
-            zoom: 9,
+            zoom: 16,
             scrollwheel: false,
             center: new google.maps.LatLng(lon_center, lat_center),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -47,6 +47,7 @@
                 }]
             }]
         });
+
 
 
         var boxText = document.createElement("div");

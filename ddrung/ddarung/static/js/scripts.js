@@ -712,25 +712,29 @@ $.get("http://ipinfo.io", function (response) {
  function initAutocomplete() {
             var input1 = document.getElementById('autocomplete-input1');
             var input2 = document.getElementById('autocomplete-input2');
-            var autocomplete1 = new google.maps.places.Autocomplete(input1);
-            autocomplete1.addListener('place_changed', function() {
-                var place = autocomplete1.getPlace();
-                $("#test").text(place);
-                if (!place.geometry) {
-                    window.alert("No details available for input: '" + place.name + "'");
+            console.log('123');
+
+            var searchbox1 = new google.maps.places.SearchBox(input1);
+
+            searchbox1.addListener('place_changed', function() {
+                var place1 = searchbox1.getPlace();
+
+                if (!place1.geometry) {
+                    window.alert("No details available for input: '" + place1.name + "'");
                     return;
                 }
             });
-            var autocomplete2 = new google.maps.places.Autocomplete(input2);
-            autocomplete2.addListener('place_changed', function() {
-              var place = autocomplete2.getPlace();
-              $("#test").text(place);
-              if (!place.geometry) {
-                window.alert("No details available for input: '" + place.name + "'");
+
+            var searchbox2 = new google.maps.places.SearchBox(input2);
+            searchbox2.addListener('place_changed', function() {
+              var place2 = searchbox2.getPlace();
+              if (!place2.geometry) {
+                window.alert("No details available for input: '" + place2.name + "'");
                 return;
               }
             });		
         }
+
 $(".notification-close").on("click", function () {
 	$(this).parent(".notification").slideUp(500);
 });

@@ -31,14 +31,14 @@ app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = '허은혜♡'
 # Flask app binding
 csrf = CSRFProtect(app)
-admin = Admin(app, template_mode='bootstrap3', base_template='admin/index.html')
+admin = Admin(app, name='microblog', template_mode='bootstrap3')
 db = SQLAlchemy(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
 
 
-from dbconfig import User, Role, Bookmark, Nonmember, Rent
+from dbconfig import User, Role
 
 
 
@@ -68,14 +68,16 @@ class ResgisterForm(FlaskForm):
         else:
             return False
 
+class SearchForm(FlaskForm):
+    src = StringField('NAME', validators=[DataRequired()])
+    dest = StringField('NAME', validators=[DataRequired()])
+    src_val = ""
+    dest_val = ""
+
 
 # Flask and Flask-SQLAlchemy initialization here
-admin.add_view(ModelView(User, db.session, url = '/admin/user'))
-admin.add_view(ModelView(Role, db.session, url = '/admin/role'))
-admin.add_view(ModelView(Bookmark, db.session))
-admin.add_view(ModelView(Nonmember, db.session))
-admin.add_view(ModelView(Rent, db.session))
-
+admin.add_view(ModelView(User, db.session))
+admin.add_view(ModelView(Role, db.session))
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, user_datastore)
 

@@ -2,7 +2,9 @@ from flask import render_template ,flash
 from flask import request ,redirect , url_for
 from flask_security import login_required
 from flask_login import  logout_user
-from extension import render_with_opt, get_category, app
+from extension import (render_with_opt, get_category, app,
+                       SearchForm)
+
 from dbconfig import *
 
 
@@ -14,25 +16,49 @@ def main():
 
 @app.route('/index/', methods=['GET','POST'])
 def index():
-    return render_with_opt("index.html",'/index/')
+    locsearch = SearchForm()
+    if request.method == "POST":
+        src = request.form["src"]
+        dest = request.form["dest"]
+        result_cat = "테이크아웃"
+        category = get_category("Takeout")
+        lists = category["items"]
+        locsearch = SearchForm()
+        print(src, dest)
+        return render_with_opt('listing.html', '/listing/',
+                               result_cat=result_cat,
+                               lists=lists,
+                               locsearch=locsearch,
+                               src=src, dest=dest)
+
+    return render_with_opt("index.html",'/index/',locsearch=locsearch)
 
 @app.route('/home/', methods=['GET','POST'])
 def home():
     category_list = [get_category("Takeout")]
-    return render_with_opt("home.html",'/home/',category_list=category_list)
+    locsearch = SearchForm()
+    return render_with_opt("home.html",'/home/',category_list=category_list,locsearch=locsearch)
 
 @app.route('/listing/', methods=['GET','POST'])
 def listing():
+    src =""
+    dest=""
     result_cat = "테이크아웃"
     category = get_category("Takeout")
     lists = category["items"]
-    return render_with_opt('listing.html', '/listing/',result_cat=result_cat,lists=lists)
+    locsearch = SearchForm()
+    return render_with_opt('listing.html', '/listing/',
+                           result_cat=result_cat,
+                           lists=lists,
+                           locsearch=locsearch,
+                           src=src, dest=dest)
+
 
 
 @app.route('/dashboard/', methods=['GET','POST'])
 @login_required
 def dashboard():
-    return render_with_opt('index.html', '/dashboard/')
+    return render_with_opt('dashboard.html', '/dashboard/')
 
 
 @app.route('/dashboard/myprofile/', methods=['GET','POST'])
