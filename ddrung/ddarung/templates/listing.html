@@ -50,11 +50,11 @@
                     <div class="listsearch-input-wrap fl-wrap">
 
                         <div class="listsearch-input-text" id="autocomplete-container">
-                            <input type="text" placeholder="출발지" id="autocomplete-input1" class="qodef-archive-places-search" value=""/>
-                            <a  href="#"  class="loc-act qodef-archive-current-location"><i class="fa fa-dot-circle-o"></i></a>
+                            {{ locsearch.src(placeholder="출발지", id="autocomplete-input1", class="qodef-archive-places-search", value=src) }}
+                            <a class="loc-act qodef-archive-current-location" onclick='set_location()'><i class="fa fa-dot-circle-o"></i></a>
                         </div>
                         <div class="listsearch-input-text" id="autocomplete-container">
-                            <input type="text" placeholder="목적지" id="autocomplete-input2" class="qodef-archive-places-search" value=""/>
+                            {{ locsearch.src(placeholder="목적지", id="autocomplete-input2", class="qodef-archive-places-search", value=dest) }}
                             <a  href="#"  class="loc-act qodef-archive-current-location"><i class="fa fa-dot-circle-o"></i></a>
                         </div>
                         <div class="distance-input listing fl-wrap">
@@ -123,7 +123,7 @@
 <!--========== additonal scripts  ==========-->
 {% block scripts %}
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVT_EAOogMhCvMOofSMXGztYcOQtViopU" type="text/javascript"></script>
+
 <script>
     var markerIcon = {
         anchor: new google.maps.Point(22, 16),
@@ -145,12 +145,40 @@
     lat_center = lat_center/parseFloat(lists.length);
     lon_center = lon_center/parseFloat(lists.length);
 
-    
+    function set_location(){
+        var map = document.getElementById('map-main');
+        var input = document.getElementById('autocomplete-input1');
+        var searchbox = new google.maps.places.SearchBox(input);
+        searchbox.bindTo('bounds', map);
+        var place = searchbox.getPlace;
+        console.log(place)
+    }
 </script>
 
 <script type="text/javascript" src="/static/js/map_infobox.js"></script>
 <script type="text/javascript" src="/static/js/markerclusterer.js"></script>
 <script type="text/javascript" src="/static/js/maps.js"></script>
+
+<script type="text/javascript">
+    searchbox1.addListener('place_changed', function() {
+        var place1 = searchbox1.getPlace();
+        if (!place1.geometry) {
+            console.log("im here daddy")
+            window.alert("No details available for input: '" + place1.name + "'");
+            return;
+        }
+    });
+
+    searchbox2.addListener('place_changed', function() {
+      var place2 = searchbox2.getPlace();
+      if (!place2.geometry) {
+        window.alert("No details available for input: '" + place2.name + "'");
+        return;
+      }
+    });
+
+</script>
+
 {%- endblock scripts %}
 
 <!--=============== <body>  ===============-->

@@ -62,11 +62,11 @@
 {#                            <input type="text" placeholder="What are you looking for?" value=""/>#}
 {#                        </div>#}
                             <div class="main-search-input-item location" id="autocomplete-container">
-                                <input type="text" placeholder="Source" id="autocomplete-input" value=""/>
+                                {{ locsearch.src(placeholder="Source", id="autocomplete-input1", value="") }}
                                 <a href="#"><i class="fa fa-dot-circle-o"></i></a>
                             </div>
                             <div class="main-search-input-item location" id="autocomplete-container">
-                                <input type="text" placeholder="Destination" id="autocomplete-input" value=""/>
+                                {{ locsearch.src(placeholder="Destination", id="autocomplete-input2", value="") }}
                                 <a href="#"><i class="fa fa-dot-circle-o"></i></a>
                             </div>
                             <div class="main-search-input-item">
