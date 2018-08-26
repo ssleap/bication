@@ -1,0 +1,315 @@
+{% extends 'base.html' %}
+
+{% block html_attribs %}
+{% endblock html_attribs %}
+
+<!--=============== <head>  ===============-->
+{%- block styles %}
+{%- endblock styles %}
+<!--=============== </head>  ===============-->
+
+
+<!--=============== <body>  ===============-->
+{% block body_attribs %}
+
+
+<style type="text/css">
+    body { margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; }
+    #center { position:absolute; top:50%; left:50%; width:300px; height:200px; overflow:hidden; background-color:#FC0; margin-top:-150px; margin-left:-100px;}
+</style>
+
+{% endblock body_attribs %}
+
+ <!--error message-->
+{% block error_alerts -%}
+
+{%- endblock error_alerts %}
+
+<!--content container-->
+{% block content -%}
+    <!--  content -->
+    <div class="content full-height fs-slider-wrap">
+    <!--section -->
+    <section class="hero-section no-dadding full-height"  id="sec1">
+        <div class="slider-container-wrap full-height fs-slider fl-wrap">
+            <div class="slider-container">
+                <!-- slideshow-item -->
+                <div class="slider-item fl-wrap">
+                    <div class="bg"  data-bg="/static/images/bg/1.jpg"></div>
+                    <div class="overlay"></div>
+                    <div class="hero-section-wrap fl-wrap">
+                        <div class="container">
+                            <div class="intro-item fl-wrap">
+                                <h2>프론트 엔드</h2>
+                                <h3>백 엔드</h3>
+                            </div>
+                            <div class="main-search-input-wrap">
+                                <div class="main-search-input fl-wrap">
+                                    <div class="main-search-input-item">
+                                        <select data-placeholder="출발지" class="chosen-select" >
+                                            <option>출발지</option>
+                                            <option>검색</option>
+                                            <option>Shops</option>
+                                            <option>Hotels</option>
+                                            <option>Restaurants</option>
+                                            <option>Fitness</option>
+                                            <option>Events</option>
+                                        </select>
+                                    </div>
+                                    <div class="main-search-input-item location" id="autocomplete-container">
+                                        <select data-placeholder="All Categories" class="chosen-select" >
+                                            <option>목적지</option>
+                                            <option>Shops</option>
+                                            <option>Hotels</option>
+                                            <option>Restaurants</option>
+                                            <option>Fitness</option>
+                                            <option>Events</option>
+                                        </select>
+
+
+                                    </div>
+                                    <div class="main-search-input-item">
+                                        <select data-placeholder="All Categories" class="chosen-select" >
+                                            <option>카테고리</option>
+                                            <option>Shops</option>
+                                            <option>Hotels</option>
+                                            <option>Restaurants</option>
+                                            <option>Fitness</option>
+                                            <option>Events</option>
+                                        </select>
+                                    </div>
+                                    <button class="main-search-button" onclick="window.location.href='listing.html'">Search</button>
+
+                                </div>
+                                <div class="distance-input fl-wrap">
+                                            <div class="distance-title" style="color:white"> 여유 시간 <span></span> min</div>
+                                            <div class="distance-radius-wrap fl-wrap">
+                                                <input class="distance-radius rangeslider--horizontal" type="range" min="10" max="200" step="10" value="1" data-title="Radius around selected destination">
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  slideshow-item end  -->
+                <!-- slideshow-item -->
+                <div class="slider-item fl-wrap">
+                    <div class="bg bg-ser"   data-bg="/static/images/bg/slider/1.jpg"></div>
+                    <div class="overlay"></div>
+                    <div class="hero-section-wrap fl-wrap">
+                        <div class="container">
+                            <div class="intro-item fl-wrap">
+                                <h2>Discover Our Categories</h2>
+                                <h3>Constant care and attention to the patients makes good record.</h3>
+                            </div>
+                            <span class="section-separator"></span>
+                            <div class="box-cat-container">
+                                <!--box-cat-->
+                                <a href="listing.html" class="box-cat color-bg" data-bgscr="/static/images/bg/slider/1.jpg">
+                                    <i class="fa fa-cutlery"></i>
+                                    <h4>Restaurants</h4>
+                                </a>
+                                <!--box-cat end-->
+                                <!--box-cat-->
+                                <a href="listing.html" class="box-cat color-bg" data-bgscr="/static/images/bg/slider/1.jpg">
+                                    <i class="fa fa-bed"></i>
+                                    <h4>Play</h4>
+                                </a>
+                                <!--box-cat end-->
+                                <!--box-cat-->
+                                <a href="listing.html" class="box-cat color-bg" data-bgscr="/static/images/bg/slider/1.jpg">
+                                    <i class="fa fa-shopping-bag"></i>
+                                    <h4>Culture</h4>
+                                </a>
+                                <!--box-cat end-->
+                                <!--box-cat-->
+                                <a href="listing.html" class="box-cat color-bg" data-bgscr="/static/images/bg/slider/1.jpg">
+                                    <i class="fa fa-futbol-o"></i>
+                                    <h4>Place</h4>
+                                </a>
+                                <!--box-cat end-->
+                                <!--box-cat-->
+                                <a href="listing.html" class="box-cat color-bg" data-bgscr="/static/images/bg/slider/1.jpg">
+                                    <i class="fa fa-users"></i>
+                                    <h4>Events</h4>
+                                </a>
+                                <!--box-cat end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  slideshow-item end  -->
+            </div>
+            <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+            <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+        </div>
+    </section>
+    <!-- section end -->
+</div>
+                <div class="content">
+                    <!--  section  -->
+
+                    <!--  section end -->
+                    <!--  section   -->
+                    <section  id="sec2">
+                        <div class="container">
+                            <div class="section-title">
+                                <h2> Best 추천 카테고리</h2>
+                                <div class="section-subtitle">너의 취향에 맞는 여가 카테고리를 추천해 주겠다.</div>
+                                <span class="section-separator"></span>
+                                <p>당신의 취향에 맞는 여가를 선택해 보세요.</p>
+                            </div>
+                            <div class="pricing-wrap fl-wrap">
+                                <!-- price-item-->
+                                <div class="price-item">
+                                    <div class="price-head op1">
+                                        <h3>Culture</h3>
+                                    </div>
+                                    <div class="price-content fl-wrap">
+                                        <div class="price-num fl-wrap">
+
+                                            <span class="curen"></span>
+											<img src="/static/images/all/3.jpg" alt="">
+                                            <span class="price-num-item"></span>
+
+                                        </div>
+                                        <div class="price-desc fl-wrap">
+                                            <ul>
+                                                <li>본가 청기와 감자탕</li>
+                                                <li>본가 황기와 감자탕</li>
+                                                <li>처가 청기와 감자탕</li>
+                                                <li>처가 흑기와 감자탕</li>
+                                            </ul>
+                                            <a href="{{ url_for('listing')}}" class="price-link">Choose Culture</a>
+											<div class="recomm-price">
+                                                <i class="fa fa-check"></i>
+                                                <span class="clearfix"></span>
+                                                Third
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- price-item end-->
+                                <!-- price-item-->
+                                <div class="price-item best-price">
+                                    <div class="price-head op2">
+                                        <h3>Food</h3>
+                                    </div>
+                                    <div class="price-content fl-wrap">
+                                        <div class="price-num fl-wrap">
+                                            <span class="curen"></span>
+											<img src="/static/images/all/3.jpg" alt="">
+                                            <span class="price-num-item"></span>
+                                            <div class="price-num-desc"></div>
+                                        </div>
+                                        <div class="price-desc fl-wrap">
+                                            <ul>
+                                                <li>본가 청기와 감자탕</li>
+                                                <li>본가 황기와 감자탕</li>
+                                                <li>처가 청기와 감자탕</li>
+                                                <li>처가 흑기와 감자탕</li>
+                                            </ul>
+                                            <a href="{{ url_for('listing')}}" class="price-link">Choose Food</a>
+                                            <div class="recomm-price">
+                                                <i class="fa fa-check"></i>
+                                                <span class="clearfix"></span>
+                                                Best
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- price-item end-->
+                                <!-- price-item-->
+                                <div class="price-item">
+                                    <div class="price-head">
+                                        <h3>Destroy</h3>
+                                    </div>
+                                    <div class="price-content fl-wrap">
+                                        <div class="price-num fl-wrap">
+                                            <span class="curen"></span>
+                                            <img src="/static/images/all/3.jpg" alt="">
+
+                                        </div>
+                                        <div class="price-desc fl-wrap">
+                                            <ul>
+                                                <li>본가 청기와 감자탕</li>
+                                                <li>본가 황기와 감자탕</li>
+                                                <li>처가 청기와 감자탕</li>
+                                                <li>처가 흑기와 감자탕</li>
+                                            </ul>
+                                            <a href="{{ url_for('listing')}}" class="price-link">Choose Street</a>
+											<div class="recomm-price">
+                                                <i class="fa fa-check"></i>
+                                                <span class="clearfix"></span>
+                                                Second
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- price-item end-->
+                            </div>
+                            <!-- about-wrap end  -->
+                            <span class="fw-separator"></span>
+                            <!-- features-box-container -->
+                            <div class="features-box-container fl-wrap row">
+                                <!--features-box -->
+                                <div class="features-box col-md-4">
+                                    <div class="time-line-icon">
+                                        <i class="fa fa-medkit"></i>
+                                    </div>
+                                    <h3>24 Hours Support</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla.  </p>
+                                </div>
+                                <!-- features-box end  -->
+                                <!--features-box -->
+                                <div class="features-box col-md-4">
+                                    <div class="time-line-icon">
+                                        <i class="fa fa-cogs"></i>
+                                    </div>
+                                    <h3>Admin Panel</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla.  </p>
+                                </div>
+                                <!-- features-box end  -->
+                                <!--features-box -->
+                                <div class="features-box col-md-4">
+                                    <div class="time-line-icon">
+                                        <i class="fa fa-television"></i>
+                                    </div>
+                                    <h3>Mobile Friendly</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla.  </p>
+                                </div>
+                                <!-- features-box end  -->
+                            </div>
+                            <!-- features-box-container end  -->
+                        </div>
+                    </section>
+                    <!--  section end -->
+                    <!--  section  -->
+                    <section class="gradient-bg">
+                        <div class="cirle-bg">
+                            <div class="bg" data-bg="/static/images/bg/circle.png"></div>
+                        </div>
+                        <div class="container">
+                            <div class="join-wrap fl-wrap">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h3>Join our online community</h3>
+                                        <p>Grow your marketing and be happy with your online business</p>
+                                    </div>
+                                    <div class="col-md-4"><a href="#" class="join-wrap-btn modal-open">Sign Up <i class="fa fa-sign-in"></i></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--  section end -->
+                    <div class="limit-box"></div>
+                </div>
+                <!--  content end -->
+{%- endblock content %}
+
+<!--========== additonal scripts  ==========-->
+{% block scripts %}
+
+{%- endblock scripts %}
+
+<!--=============== <body>  ===============-->

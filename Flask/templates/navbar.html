@@ -1,0 +1,69 @@
+<header class="main-header dark-header fs-header sticky">
+    <div class="header-inner">
+        <!--Logo -->
+        <div class="logo-holder">
+            <a href="{{ url_for('main') }}"><img src="/static/images/logo.png" alt=""></a>
+        </div>
+
+        <!--Search -->
+        <div class="header-search vis-header-search">
+            <!-- Keyword Input -->
+            <div class="header-search-input-item">
+                <input type="text" placeholder="검색..." value=""/>
+            </div>
+
+            <!-- Categorie Select -->
+            <div class="header-search-select-item">
+                <select data-placeholder="All Categories" class="chosen-select" >
+                    {% for category in categories %}
+                        <option> {{ category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <!-- When browser widht is long, Search Button -->
+            <button class="header-search-button" onclick="window.location.href='listing'">Search</button>
+        </div>
+        <!-- When browser widht is short, Search Button -->
+        <div class="show-search-button"><i class="fa fa-search"></i> <span>Search2</span></div>
+
+        {% if current_user.is_authenticated -%}
+        <!-- user info -->
+        <div class="header-user-menu">
+            <div class="header-user-name">
+                <span><img src="/static/images/avatar/1.jpg" alt=""></span>
+                Hello , {{ current_user.name }}
+            </div>
+            <ul>
+                <li><a href="{{ url_for('dashboard')}}"> My Page</a></li>
+                <li><a href="{{ url_for('myprofile')}}"> 프로필 수정</a></li>
+                <li><a href="{{ url_for('logout')}}">Log Out</a></li>
+            </ul>
+        </div>
+        {% else  -%}
+        <!-- Sign-In button -->
+        <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Log in </div>
+        {% endif -%}
+        <!--&lt;!&ndash; nav-button-wrap&ndash;&gt;-->
+        <!--<div class="nav-button-wrap color-bg">-->
+            <!--<div class="nav-button">-->
+                <!--<span></span><span></span><span></span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; nav-button-wrap end&ndash;&gt;-->
+
+        <!--  navigation -->
+        <div class="nav-holder main-menu">
+            <nav>
+                <ul>
+                    <li>
+                        <a href={{ url_for('home') }}>Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('listing') }}">Listing</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- navigation  end -->
+    </div>
+</header>
