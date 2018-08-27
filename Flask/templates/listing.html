@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+{% block html_attribs %}
+{% endblock html_attribs %}
+
+<!--=============== <head>  ===============-->
+{%- block styles %}
+{%- endblock styles %}
+<!--=============== </head>  ===============-->
+
+
+<!--=============== <body>  ===============-->
+{% block body_attribs %}
+
+{% endblock body_attribs %}
+
+ <!--error message-->
+{% block error_alerts -%}
+
+{%- endblock error_alerts %}
+
+<!--content container-->
+{% block content -%}
+<!-- wrapper -->
+<div id="wrapper">
+    <div class="content">
+        <!-- Map -->
+        <div class="map-container column-map right-pos-map">
+            <div id="map-main"></div>
+            <ul class="mapnavigation">
+                <li><a href="#" class="prevmap-nav">Prev</a></li>
+                <li><a href="#" class="nextmap-nav">Next</a></li>
+            </ul>
+        </div>
+        <!-- Map end -->
+        <!--col-list-wrap -->
+        <div class="col-list-wrap left-list">
+            <div class="listsearch-options fl-wrap" id="lisfw" >
+                <div class="container">
+                    <div class="listsearch-header fl-wrap">
+                        <h3>Results For : <span>{{ result_cat }}</span></h3>
+                        <div class="listing-view-layout">
+                            <ul>
+                                <li><a class="grid active" href="#"><i class="fa fa-th-large"></i></a></li>
+                                <li><a class="list" href="#"><i class="fa fa-list-ul"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- listsearch-input-wrap  -->
+                    <div class="listsearch-input-wrap fl-wrap">
+
+                        <div class="listsearch-input-text" id="autocomplete-container">
+                            {{ locsearch.src(placeholder="출발지", id="autocomplete-input1", class="qodef-archive-places-search", value=src) }}
+                            <a class="loc-act qodef-archive-current-location"><i class="fa fa-dot-circle-o"></i></a>
+                        </div>
+                        <div class="listsearch-input-text" id="autocomplete-container">
+                            {{ locsearch.src(placeholder="목적지", id="autocomplete-input2", class="qodef-archive-places-search", value=dest) }}
+                            <a  href="#"  class="loc-act qodef-archive-current-location"><i class="fa fa-dot-circle-o"></i></a>
+                        </div>
+                        <div class="distance-input listing fl-wrap">
+                                <div class="distance-title"> Radius around selected destination <span></span> km</div>
+                                <div class="distance-radius-wrap fl-wrap">
+                                    <input class="distance-radius rangeslider--horizontal" type="range" min="1" max="100" step="1" value="1" data-title="Radius around selected destination">
+                                </div>
+                            </div>
+                        <div class="listsearch-input-item">
+                            <select data-placeholder="Location" class="chosen-select" >
+                                {% for category in categories %}
+                                    <option> {{ category }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button class="button fs-map-btn listing">Update</button>
+
+                    </div>
+                    <!-- listsearch-input-wrap end -->
+                </div>
+            </div>
+            <!-- list-main-wrap-->
+            <div class="list-main-wrap fl-wrap card-listing">
+                <a class="custom-scroll-link back-to-filters btf-l" href="#lisfw"><i class="fa fa-angle-double-up"></i><span>Back to Filters</span></a>
+                <div class="container">
+                    {% for item in lists %}
+{#                        {% set item = item["items"] %}#}
+                    <!-- listing-item -->
+                    <div class="listing-item">
+                        <article class="geodir-category-listing fl-wrap">
+                            <div class="geodir-category-img">
+                                <img src="{{ item["image"] }}" alt="">
+                                <div class="overlay"></div>
+                                <div class="list-post-counter"><span>{{ item["mark_cnt"] }}</span><i class="fa fa-heart"></i></div>
+                            </div>
+                            <div class="geodir-category-content fl-wrap">
+                                <h3><a href="listing-single.html">{{ item["title"] }}</a></h3>
+                                <p>{{ item["text"] }}</p>
+                                <div class="geodir-category-options fl-wrap">
+                                    <div class="listing-rating card-popup-rainingvis" data-starrating2="{{ item["star_cnt"] }}">
+                                        <span>({{ item["rev_cnt"] }} reviews)</span>
+                                    </div>
+                                    <div class="geodir-category-location"><a  href="#0" class="map-item"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ item["addr"] }}</a></div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                        {% if loop.index%2 == 0 %}
+                            <div class="clearfix"></div>
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+                <a class="load-more-button" href="#">Load more <i class="fa fa-circle-o-notch"></i> </a>
+            </div>
+            <!-- list-main-wrap end-->
+        </div>
+        <!--col-list-wrap -->
+        <div class="limit-box fl-wrap"></div>
+
+    </div>
+    <!--content end -->
+</div>
+<!-- wrapper end -->
+{%- endblock content %}
+
+<!--========== additonal scripts  ==========-->
+{% block scripts %}
+
+
+<script>
+var pageScript = function () {
+    var markerIcon = {
+        anchor: new google.maps.Point(22, 16),
+        url: '/static/images/marker.png',
+    }
+    function locationData(locationURL, locationCategory, locationImg, locationTitle, locationAddress, locationPhone, locationStarRating, locationRevievsCounter) {
+            return ('<div class="map-popup-wrap"><div class="map-popup"><div class="infoBox-close"><i class="fa fa-times"></i></div><div class="map-popup-category">' + locationCategory + '</div><a href="' + locationURL + '" class="listing-img-content fl-wrap"><img src="' + locationImg + '" alt=""></a> <div class="listing-content fl-wrap"><div class="card-popup-raining map-card-rainting" data-staRrating="' + locationStarRating + '"><span class="map-popup-reviews-count">( ' + locationRevievsCounter + ' reviews )</span></div><div class="listing-title fl-wrap"><h4><a href=' + locationURL + '>' + locationTitle + '</a></h4><span class="map-popup-location-info"><i class="fa fa-map-marker"></i>' + locationAddress + '</span><span class="map-popup-location-phone"><i class="fa fa-phone"></i>' + locationPhone + '</span></div></div></div></div>')
+        }
+
+    var lat_center =0;
+    var lon_center =0;
+    var locations = [];
+    var lists = {{ lists|tojson }};
+    for (var i = 0; i < lists.length; i++) {
+        single_list = lists[i];
+        locations.push([locationData('listing-single.html', "{{ result_cat }}", single_list.image, single_list.title, single_list.addr, single_list.call , single_list.star_cnt, single_list.rev_cnt ), single_list.lon, single_list.lat,i , markerIcon]);
+        lat_center = lat_center + single_list.lat;
+        lon_center = lon_center + single_list.lon;
+        console.log(single_list.image, single_list.title, single_list.addr, single_list.call , single_list.star_cnt, single_list.rev_cnt, single_list.lon, single_list.lat,i );
+    }
+    lat_center = lat_center/parseFloat(lists.length);
+    lon_center = lon_center/parseFloat(lists.length);
+
+    return [locations, lat_center, lon_center];
+};
+
+
+</script>
+
+<script type="text/javascript" src="/static/js/map_infobox.js"></script>
+<script type="text/javascript" src="/static/js/markerclusterer.js"></script>
+<script type="text/javascript" src="/static/js/maps.js"></script>
+
+
+
+{%- endblock scripts %}
+
+<!--=============== <body>  ===============-->
