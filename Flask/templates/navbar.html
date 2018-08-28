@@ -5,26 +5,6 @@
             <a href="{{ url_for('main') }}"><img src="/static/images/logo.png" alt=""></a>
         </div>
 
-        <!--Search -->
-        <div class="header-search vis-header-search">
-            <!-- Keyword Input -->
-            <div class="header-search-input-item">
-                <input type="text" placeholder="검색..." value=""/>
-            </div>
-
-            <!-- Categorie Select -->
-            <div class="header-search-select-item">
-                <select data-placeholder="All Categories" class="chosen-select" >
-                    {% for category in categories %}
-                        <option> {{ category }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <!-- When browser widht is long, Search Button -->
-            <button class="header-search-button" onclick="window.location.href='listing'">Search</button>
-        </div>
-        <!-- When browser widht is short, Search Button -->
-        <div class="show-search-button"><i class="fa fa-search"></i> <span>Search2</span></div>
 
         {% if current_user.is_authenticated -%}
         <!-- user info -->

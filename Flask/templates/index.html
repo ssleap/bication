@@ -46,7 +46,7 @@
             <div class="container">
 
                 <div class="intro-item fl-wrap">
-                    <h1 id = "test">test</h1>
+
                     <h2>목적지를 향한 여가 생활을 찾아보세요</h2>
                     <h3>#테이크아웃 맛집 #이쁜 공원 #시선을 사로잡는 야경</h3>
                 </div>
@@ -66,22 +66,8 @@
                             {{ locsearch.dest(placeholder="Destination", id="autocomplete-input2", value="") }}
                             <a href="#"><i class="fa fa-dot-circle-o"></i></a>
                         </div>
-                        <div class="main-search-input-item">
-                            <select data-placeholder="All Categories" class="chosen-select" >
-                                {% for category in categories %}
-                                    <option> {{ category }}</option>
-                                {% endfor %}
-
-                            </select>
-                        </div>
                         <button class="main-search-button" onclick="window.location.href='{{ url_for('index') }}'">Search</button>
                         </form>
-                    </div>
-                </div>
-                <div class="distance-input fl-wrap">
-                    <div class="distance-title" style="color:white"> 여유 시간 <span></span> min</div>
-                    <div class="distance-radius-wrap fl-wrap">
-                        <input class="distance-radius rangeslider--horizontal" type="range" min="10" max="200" step="10" value="1" data-title="Radius around selected destination">
                     </div>
                 </div>
             </div>

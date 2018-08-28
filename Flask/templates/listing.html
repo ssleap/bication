@@ -38,7 +38,7 @@
             <div class="listsearch-options fl-wrap" id="lisfw" >
                 <div class="container">
                     <div class="listsearch-header fl-wrap">
-                        <h3>Results For : <span>{{ result_cat }}</span></h3>
+
                         <div class="listing-view-layout">
                             <ul>
                                 <li><a class="grid active" href="#"><i class="fa fa-th-large"></i></a></li>
@@ -56,19 +56,6 @@
                         <div class="listsearch-input-text" id="autocomplete-container">
                             {{ locsearch.src(placeholder="목적지", id="autocomplete-input2", class="qodef-archive-places-search", value=dest) }}
                             <a  href="#"  class="loc-act qodef-archive-current-location"><i class="fa fa-dot-circle-o"></i></a>
-                        </div>
-                        <div class="distance-input listing fl-wrap">
-                                <div class="distance-title"> Radius around selected destination <span></span> km</div>
-                                <div class="distance-radius-wrap fl-wrap">
-                                    <input class="distance-radius rangeslider--horizontal" type="range" min="1" max="100" step="1" value="1" data-title="Radius around selected destination">
-                                </div>
-                            </div>
-                        <div class="listsearch-input-item">
-                            <select data-placeholder="Location" class="chosen-select" >
-                                {% for category in categories %}
-                                    <option> {{ category }}</option>
-                                {% endfor %}
-                            </select>
                         </div>
                         <button class="button fs-map-btn listing">Update</button>
 
@@ -108,7 +95,7 @@
                     {% endfor %}
 
                 </div>
-                <a class="load-more-button" href="#">Load more <i class="fa fa-circle-o-notch"></i> </a>
+
             </div>
             <!-- list-main-wrap end-->
         </div>

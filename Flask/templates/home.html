@@ -57,39 +57,25 @@
                         <h3>#테이크아웃 맛집 #이쁜 공원 #시선을 사로잡는 야경</h3>
                     </div>
                     <div class="main-search-input-wrap">
-                        <div class="main-search-input fl-wrap">
-                            <form method="post"   name="locsaech" class="location-search-form" id="location-search-form2">
-                                {{ locsearch.csrf_token }}
-        {#                        <div class="main-search-input-item">#}
-        {#                            <input type="text" placeholder="What are you looking for?" value=""/>#}
-        {#                        </div>#}
-                                <div class="main-search-input-item location" id="autocomplete-container">
-                                    {{ locsearch.src(placeholder="Source", id="autocomplete-input1", value="") }}
-        {#                            <input type="text" placeholder="Source" id="autocomplete-input1" value=""/>#}
-                                    <a href="#"><i class="fa fa-dot-circle-o"></i></a>
-                                </div>
-                                <div class="main-search-input-item location" id="autocomplete-container">
-                                    {{ locsearch.dest(placeholder="Destination", id="autocomplete-input2", value="") }}
-                                    <a href="#"><i class="fa fa-dot-circle-o"></i></a>
-                                </div>
-                                <div class="main-search-input-item">
-                                    <select data-placeholder="All Categories" class="chosen-select" >
-                                        {% for category in categories %}
-                                            <option> {{ category }}</option>
-                                        {% endfor %}
-
-                                    </select>
-                                </div>
-                                <button class="main-search-button" onclick="window.location.href='{{ url_for('index') }}'">Search</button>
-                            </form>
+                    <div class="main-search-input fl-wrap">
+                        <form method="post"   name="locsearch" class="location-search-form" id="location-search-form2">
+                        {{ locsearch.csrf_token }}
+{#                        <div class="main-search-input-item">#}
+{#                            <input type="text" placeholder="What are you looking for?" value=""/>#}
+{#                        </div>#}
+                        <div class="main-search-input-item location" id="autocomplete-container">
+                            {{ locsearch.src(placeholder="Source", id="autocomplete-input1", value="") }}
+{#                            <input type="text" placeholder="Source" id="autocomplete-input1" value=""/>#}
+                            <a href="#"><i class="fa fa-dot-circle-o"></i></a>
                         </div>
-                    </div>
-                    <div class="distance-input fl-wrap">
-                        <div class="distance-title" style="color:white"> 여유 시간 <span></span> min</div>
-                        <div class="distance-radius-wrap fl-wrap">
-                            <input class="distance-radius rangeslider--horizontal" type="range" min="10" max="200" step="10" value="1" data-title="Radius around selected destination">
+                        <div class="main-search-input-item location" id="autocomplete-container">
+                            {{ locsearch.dest(placeholder="Destination", id="autocomplete-input2", value="") }}
+                            <a href="#"><i class="fa fa-dot-circle-o"></i></a>
                         </div>
+                        <button class="main-search-button" onclick="window.location.href='{{ url_for('index') }}'">Search</button>
+                        </form>
                     </div>
+                </div>
                 </div>
             </div>
             <div class="bubble-bg"> </div>

@@ -88,20 +88,8 @@ admin.add_view(ModelView(Rent, db.session))
 class AnalyticsView1(BaseView):
     @expose("/")
     def analytics1(self):
-        return self.render("admin/analytics.html")
+        return self.render("admin/analysis.html")
 admin.add_view(AnalyticsView1(name='Analytics1', endpoint='analytics1'))
-
-class AnalyticsView2(BaseView):
-    @expose("/")
-    def analytics2(self):
-        return self.render("admin/analytics.html")
-admin.add_view(AnalyticsView2(name='Analytics2', endpoint='analytics2'))
-
-class AnalyticsView3(BaseView):
-    @expose("/")
-    def analytics3(self):
-        return self.render("admin/analytics.html")
-admin.add_view(AnalyticsView1(name='Analytics3', endpoint='analytics3'))
 
 
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
